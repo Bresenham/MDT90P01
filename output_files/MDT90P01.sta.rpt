@@ -1,0 +1,1419 @@
+TimeQuest Timing Analyzer report for MDT90P01
+Sat May 12 13:10:36 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'c0'
+ 12. Slow Model Hold: 'c0'
+ 13. Slow Model Minimum Pulse Width: 'c0'
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Fast Model Setup Summary
+ 17. Fast Model Hold Summary
+ 18. Fast Model Recovery Summary
+ 19. Fast Model Removal Summary
+ 20. Fast Model Minimum Pulse Width Summary
+ 21. Fast Model Setup: 'c0'
+ 22. Fast Model Hold: 'c0'
+ 23. Fast Model Minimum Pulse Width: 'c0'
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Multicorner Timing Analysis Summary
+ 27. Clock to Output Times
+ 28. Minimum Clock to Output Times
+ 29. Setup Transfers
+ 30. Hold Transfers
+ 31. Report TCCS
+ 32. Report RSKM
+ 33. Unconstrained Paths
+ 34. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; MDT90P01                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; c0         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { c0 }  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 176.8 MHz ; 176.8 MHz       ; c0         ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; c0    ; -2.728 ; -117.052      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; c0    ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; c0    ; -1.631 ; -70.063               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'c0'                                                                                                                                                 ;
++--------+------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.728 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.767      ;
+; -2.723 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.763      ;
+; -2.683 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.722      ;
+; -2.630 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.668      ;
+; -2.603 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.642      ;
+; -2.598 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[4]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.636      ;
+; -2.598 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.638      ;
+; -2.562 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.601      ;
+; -2.558 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.597      ;
+; -2.548 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[7]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.586      ;
+; -2.532 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.572      ;
+; -2.527 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 1.000        ; 0.003      ; 3.568      ;
+; -2.498 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.537      ;
+; -2.493 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.533      ;
+; -2.487 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.526      ;
+; -2.487 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.527      ;
+; -2.482 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.522      ;
+; -2.453 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.492      ;
+; -2.448 ; Program_Counter:pc_inst|pc_int[1]        ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.486      ;
+; -2.437 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.476      ;
+; -2.416 ; Program_Counter:pc_inst|pc_int[1]        ; Program_Counter:pc_inst|pc_int[4]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.454      ;
+; -2.407 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[5]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.445      ;
+; -2.383 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.422      ;
+; -2.366 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.406      ;
+; -2.366 ; Program_Counter:pc_inst|pc_int[1]        ; Program_Counter:pc_inst|pc_int[7]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.404      ;
+; -2.362 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.401      ;
+; -2.357 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.397      ;
+; -2.332 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.371      ;
+; -2.328 ; Pipeline_State:pipe_inst|state_mem[0]    ; W_Reg:wreg_inst|w_content[0]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.870      ;
+; -2.328 ; Pipeline_State:pipe_inst|state_mem[0]    ; W_Reg:wreg_inst|w_content[1]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.870      ;
+; -2.328 ; Pipeline_State:pipe_inst|state_mem[0]    ; W_Reg:wreg_inst|w_content[2]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.870      ;
+; -2.319 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.359      ;
+; -2.299 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[3]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.337      ;
+; -2.291 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.331      ;
+; -2.286 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 1.000        ; 0.003      ; 3.327      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][1]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][2]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][0]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][3]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.263 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.802      ;
+; -2.261 ; Program_Counter:pc_inst|pc_int[4]        ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.300      ;
+; -2.258 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.297      ;
+; -2.257 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.296      ;
+; -2.256 ; Program_Counter:pc_inst|pc_int[4]        ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.296      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][1]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][2]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][0]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][3]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.255 ; Pipeline_State:pipe_inst|state_mem[1]    ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 0.500        ; 0.001      ; 2.794      ;
+; -2.252 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.292      ;
+; -2.247 ; Program_Counter:pc_inst|pc_int[0]        ; Program_Counter:pc_inst|pc_int[6]            ; c0           ; c0          ; 1.000        ; -0.001     ; 3.284      ;
+; -2.247 ; Program_Counter:pc_inst|pc_int[3]        ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.285      ;
+; -2.244 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.284      ;
+; -2.239 ; Program_Counter:pc_inst|pc_int[7]        ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.277      ;
+; -2.230 ; Instruction_Decoder:dec_inst|is_ret~reg0 ; Stack:stack_int|ret_addr[2]                  ; c0           ; c0          ; 1.000        ; -0.005     ; 3.263      ;
+; -2.230 ; Instruction_Decoder:dec_inst|is_ret~reg0 ; Stack:stack_int|ret_addr[6]                  ; c0           ; c0          ; 1.000        ; -0.005     ; 3.263      ;
+; -2.225 ; Program_Counter:pc_inst|pc_int[1]        ; Program_Counter:pc_inst|pc_int[5]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.263      ;
+; -2.216 ; Program_Counter:pc_inst|pc_int[4]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.255      ;
+; -2.215 ; Program_Counter:pc_inst|pc_int[3]        ; Program_Counter:pc_inst|pc_int[4]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.253      ;
+; -2.210 ; Pipeline_State:pipe_inst|state_mem[1]    ; W_Reg:wreg_inst|w_content[0]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.752      ;
+; -2.210 ; Pipeline_State:pipe_inst|state_mem[1]    ; W_Reg:wreg_inst|w_content[1]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.752      ;
+; -2.210 ; Pipeline_State:pipe_inst|state_mem[1]    ; W_Reg:wreg_inst|w_content[2]                 ; c0           ; c0          ; 0.500        ; 0.004      ; 2.752      ;
+; -2.194 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.234      ;
+; -2.187 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.227      ;
+; -2.176 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Memory:instr_inst|instruction[1] ; c0           ; c0          ; 0.500        ; 0.003      ; 2.717      ;
+; -2.176 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Memory:instr_inst|instruction[0] ; c0           ; c0          ; 0.500        ; 0.003      ; 2.717      ;
+; -2.176 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Memory:instr_inst|instruction[2] ; c0           ; c0          ; 0.500        ; 0.003      ; 2.717      ;
+; -2.176 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Memory:instr_inst|instruction[7] ; c0           ; c0          ; 0.500        ; 0.003      ; 2.717      ;
+; -2.165 ; Program_Counter:pc_inst|pc_int[3]        ; Program_Counter:pc_inst|pc_int[7]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.203      ;
+; -2.164 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.204      ;
+; -2.163 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][3]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.202      ;
+; -2.157 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Decoder:dec_inst|write_w         ; c0           ; c0          ; 0.500        ; 0.003      ; 2.698      ;
+; -2.157 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Decoder:dec_inst|immediate[0]    ; c0           ; c0          ; 0.500        ; 0.003      ; 2.698      ;
+; -2.157 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Decoder:dec_inst|immediate[1]    ; c0           ; c0          ; 0.500        ; 0.003      ; 2.698      ;
+; -2.157 ; Pipeline_State:pipe_inst|state_mem[0]    ; Instruction_Decoder:dec_inst|immediate[2]    ; c0           ; c0          ; 0.500        ; 0.003      ; 2.698      ;
+; -2.153 ; Program_Counter:pc_inst|pc_int[3]        ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.192      ;
+; -2.149 ; Program_Counter:pc_inst|pc_int[5]        ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.188      ;
+; -2.133 ; Program_Counter:pc_inst|pc_int[0]        ; Stack:stack_int|stack_int[0][2]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.172      ;
+; -2.123 ; Program_Counter:pc_inst|pc_int[2]        ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 1.000        ; 0.003      ; 3.164      ;
+; -2.119 ; Program_Counter:pc_inst|pc_int[1]        ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 1.000        ; 0.002      ; 3.159      ;
+; -2.117 ; Program_Counter:pc_inst|pc_int[1]        ; Program_Counter:pc_inst|pc_int[3]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.155      ;
+; -2.109 ; Program_Counter:pc_inst|pc_int[4]        ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 1.000        ; 0.000      ; 3.147      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][1]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][2]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][0]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][3]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.101 ; Pipeline_State:pipe_inst|state_mem[0]    ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 0.500        ; 0.000      ; 2.639      ;
+; -2.095 ; Program_Counter:pc_inst|pc_int[4]        ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 1.000        ; 0.001      ; 3.134      ;
++--------+------------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'c0'                                                                                                                                                         ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Instruction_Decoder:dec_inst|is_jump~reg0      ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.731      ;
+; 0.630 ; Stack:stack_int|ret_addr[7]                    ; Program_Counter:pc_inst|pc_int[7]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.916      ;
+; 0.647 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.933      ;
+; 0.824 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 1.110      ;
+; 0.825 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 1.111      ;
+; 0.853 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|immediate[0]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.139      ;
+; 0.874 ; Stack:stack_int|stack_int[0][7]                ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.159      ;
+; 0.878 ; Instruction_Memory:instr_inst|instruction[1]   ; Instruction_Decoder:dec_inst|immediate[1]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.164      ;
+; 0.959 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 1.245      ;
+; 0.975 ; Stack:stack_int|ret_addr[8]                    ; Program_Counter:pc_inst|pc_int[8]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.261      ;
+; 0.976 ; Stack:stack_int|ret_addr[0]                    ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.262      ;
+; 0.980 ; Stack:stack_int|ret_addr[3]                    ; Program_Counter:pc_inst|pc_int[3]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.266      ;
+; 0.990 ; Instruction_Decoder:dec_inst|immediate[1]      ; W_Reg:wreg_inst|w_content[1]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.277      ;
+; 1.000 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 1.286      ;
+; 1.006 ; Stack:stack_int|stack_int[0][5]                ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.291      ;
+; 1.011 ; Stack:stack_int|ret_addr[4]                    ; Program_Counter:pc_inst|pc_int[4]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.297      ;
+; 1.011 ; Instruction_Decoder:dec_inst|immediate[2]      ; W_Reg:wreg_inst|w_content[2]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.298      ;
+; 1.013 ; Stack:stack_int|stack_int[0][4]                ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.298      ;
+; 1.014 ; Stack:stack_int|ret_addr[1]                    ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.300      ;
+; 1.015 ; Stack:stack_int|ret_addr[2]                    ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.301      ;
+; 1.015 ; Stack:stack_int|ret_addr[6]                    ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.301      ;
+; 1.016 ; Stack:stack_int|ret_addr[5]                    ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; 0.000      ; 1.302      ;
+; 1.034 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 1.320      ;
+; 1.065 ; Stack:stack_int|stack_int[0][1]                ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.350      ;
+; 1.065 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[1]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.351      ;
+; 1.071 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|write_w           ; c0           ; c0          ; 0.000        ; 0.000      ; 1.357      ;
+; 1.075 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[2]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.361      ;
+; 1.076 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[0]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.362      ;
+; 1.130 ; Stack:stack_int|stack_int[1][6]                ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 1.413      ;
+; 1.137 ; Stack:stack_int|stack_int[1][2]                ; Stack:stack_int|ret_addr[2]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 1.420      ;
+; 1.143 ; Stack:stack_int|stack_int[1][1]                ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.427      ;
+; 1.145 ; Stack:stack_int|stack_int[1][4]                ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.429      ;
+; 1.162 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.452      ;
+; 1.162 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[2]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.452      ;
+; 1.165 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.455      ;
+; 1.166 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[7]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.456      ;
+; 1.186 ; Stack:stack_int|stack_int[1][3]                ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.470      ;
+; 1.195 ; Instruction_Memory:instr_inst|instruction[2]   ; Instruction_Decoder:dec_inst|immediate[2]      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.481      ;
+; 1.207 ; Stack:stack_int|stack_int[0][0]                ; Stack:stack_int|ret_addr[0]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.492      ;
+; 1.213 ; Stack:stack_int|stack_int[0][3]                ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.498      ;
+; 1.263 ; Instruction_Decoder:dec_inst|immediate[0]      ; W_Reg:wreg_inst|w_content[0]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.550      ;
+; 1.264 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|is_jump~reg0      ; c0           ; c0          ; 0.000        ; 0.000      ; 1.550      ;
+; 1.265 ; Instruction_Memory:instr_inst|instruction[1]   ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.551      ;
+; 1.265 ; Stack:stack_int|stack_int[0][6]                ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.549      ;
+; 1.268 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.554      ;
+; 1.273 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.559      ;
+; 1.273 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.000      ; 1.559      ;
+; 1.276 ; Stack:stack_int|stack_int[1][8]                ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.560      ;
+; 1.276 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.562      ;
+; 1.294 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[0]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.581      ;
+; 1.294 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[1]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.581      ;
+; 1.294 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[2]                   ; c0           ; c0          ; 0.000        ; 0.001      ; 1.581      ;
+; 1.311 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[2]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.601      ;
+; 1.388 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[0]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.672      ;
+; 1.396 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.680      ;
+; 1.452 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; -0.005     ; 1.733      ;
+; 1.453 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; -0.005     ; 1.734      ;
+; 1.476 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.766      ;
+; 1.499 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; -0.002     ; 1.783      ;
+; 1.503 ; Instruction_Memory:instr_inst|instruction[2]   ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.789      ;
+; 1.510 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.004      ; 1.800      ;
+; 1.512 ; Stack:stack_int|stack_int[1][7]                ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.796      ;
+; 1.512 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.794      ;
+; 1.513 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.000      ; 1.799      ;
+; 1.513 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[3]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.795      ;
+; 1.514 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[8]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.796      ;
+; 1.515 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 1.801      ;
+; 1.517 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[4]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.799      ;
+; 1.517 ; Stack:stack_int|stack_int[0][8]                ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 1.802      ;
+; 1.520 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.802      ;
+; 1.520 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[7]   ; c0           ; c0          ; 0.000        ; 0.005      ; 1.811      ;
+; 1.524 ; Stack:stack_int|stack_int[1][5]                ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.808      ;
+; 1.524 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.005      ; 1.815      ;
+; 1.529 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; -0.002     ; 1.813      ;
+; 1.532 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 1.815      ;
+; 1.532 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[2]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 1.815      ;
+; 1.548 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; -0.005     ; 1.829      ;
+; 1.559 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.841      ;
+; 1.562 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.846      ;
+; 1.563 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.005      ; 1.854      ;
+; 1.566 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.850      ;
+; 1.571 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.853      ;
+; 1.572 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; -0.004     ; 1.854      ;
+; 1.592 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.876      ;
+; 1.594 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.878      ;
+; 1.596 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 1.880      ;
+; 1.757 ; Program_Counter:pc_inst|pc_int[8]              ; Stack:stack_int|stack_int[1][8]                ; c0           ; c0          ; 0.000        ; 0.002      ; 2.045      ;
+; 1.787 ; Program_Counter:pc_inst|pc_int[6]              ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; 0.000      ; 2.073      ;
+; 1.789 ; Program_Counter:pc_inst|pc_int[2]              ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; 0.000      ; 2.075      ;
+; 1.837 ; Program_Counter:pc_inst|pc_int[8]              ; Stack:stack_int|stack_int[0][8]                ; c0           ; c0          ; 0.000        ; 0.001      ; 2.124      ;
+; 1.864 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; -0.004     ; 2.146      ;
+; 1.864 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; -0.004     ; 2.146      ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'c0'                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; c0    ; Rise       ; c0                                             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[0]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[1]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[2]      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_jump~reg0      ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_jump~reg0      ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_ret~reg0       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_ret~reg0       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|write_w           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|write_w           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|idx[0]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|idx[0]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[0]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[0]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[1]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[1]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[2]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[2]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[3]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[3]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[4]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[4]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[5]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[5]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[6]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[6]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[7]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[7]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[8]                    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[8]                    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][0]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][0]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][1]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][1]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][2]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][2]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][3]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][3]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][4]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][4]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][5]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][5]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][6]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][6]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][7]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][7]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][8]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][8]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][0]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][0]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][1]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][1]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][2]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][2]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][3]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][3]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][4]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][4]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][5]                ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 7.791 ; 7.791 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 7.460 ; 7.460 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 7.438 ; 7.438 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 7.791 ; 7.791 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 7.447 ; 7.447 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 7.214 ; 7.214 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 8.004 ; 8.004 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 7.527 ; 7.527 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 7.499 ; 7.499 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 8.004 ; 8.004 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 7.994 ; 7.994 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 6.881 ; 6.881 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 7.824 ; 7.824 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 7.741 ; 7.741 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 7.824 ; 7.824 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 7.165 ; 7.165 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 7.701 ; 7.701 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 7.709 ; 7.709 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 7.167 ; 7.167 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 7.156 ; 7.156 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 7.709 ; 7.709 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 7.237 ; 7.237 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 7.181 ; 7.181 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 7.179 ; 7.179 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 7.182 ; 7.182 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 7.173 ; 7.173 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 7.984 ; 7.984 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 7.611 ; 7.611 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 7.234 ; 7.234 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 7.216 ; 7.216 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 7.170 ; 7.170 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 7.611 ; 7.611 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 7.229 ; 7.229 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 7.196 ; 7.196 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 7.163 ; 7.163 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 7.208 ; 7.208 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 7.230 ; 7.230 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 7.829 ; 7.829 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 7.174 ; 7.174 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 7.829 ; 7.829 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 7.522 ; 7.522 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 7.531 ; 7.531 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 7.533 ; 7.533 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 7.808 ; 7.808 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 6.877 ; 6.877 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 7.826 ; 7.826 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 6.872 ; 6.872 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 6.888 ; 6.888 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 7.178 ; 7.178 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 7.642 ; 7.642 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 7.478 ; 7.478 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 7.826 ; 7.826 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 7.623 ; 7.623 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 6.892 ; 6.892 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 7.407 ; 7.407 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 7.713 ; 7.713 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 7.141 ; 7.141 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 7.713 ; 7.713 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+; write_w          ; c0         ; 8.014 ; 8.014 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 7.438 ; 7.438 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 7.460 ; 7.460 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 7.438 ; 7.438 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 7.791 ; 7.791 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 7.214 ; 7.214 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 7.447 ; 7.447 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 7.214 ; 7.214 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 7.499 ; 7.499 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 7.527 ; 7.527 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 7.499 ; 7.499 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 8.004 ; 8.004 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 7.994 ; 7.994 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 6.881 ; 6.881 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 7.165 ; 7.165 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 7.741 ; 7.741 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 7.824 ; 7.824 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 7.165 ; 7.165 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 7.701 ; 7.701 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 7.167 ; 7.167 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 7.156 ; 7.156 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 7.709 ; 7.709 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 7.237 ; 7.237 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 7.181 ; 7.181 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 7.179 ; 7.179 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 7.182 ; 7.182 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 7.173 ; 7.173 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 7.984 ; 7.984 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 7.163 ; 7.163 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 7.234 ; 7.234 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 7.216 ; 7.216 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 7.170 ; 7.170 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 7.611 ; 7.611 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 7.229 ; 7.229 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 7.196 ; 7.196 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 7.163 ; 7.163 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 7.208 ; 7.208 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 7.230 ; 7.230 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 6.877 ; 6.877 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 7.174 ; 7.174 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 7.829 ; 7.829 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 7.522 ; 7.522 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 7.531 ; 7.531 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 7.533 ; 7.533 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 7.808 ; 7.808 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 6.877 ; 6.877 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 6.872 ; 6.872 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 6.872 ; 6.872 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 6.888 ; 6.888 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 7.178 ; 7.178 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 7.642 ; 7.642 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 7.478 ; 7.478 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 7.826 ; 7.826 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 7.623 ; 7.623 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 6.892 ; 6.892 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 7.407 ; 7.407 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 7.141 ; 7.141 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 7.141 ; 7.141 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 7.713 ; 7.713 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+; write_w          ; c0         ; 8.014 ; 8.014 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; c0    ; -0.699 ; -30.363       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; c0    ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; c0    ; -1.380 ; -57.380               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'c0'                                                                                                                                              ;
++--------+---------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.699 ; Pipeline_State:pipe_inst|state_mem[0] ; W_Reg:wreg_inst|w_content[0]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.234      ;
+; -0.699 ; Pipeline_State:pipe_inst|state_mem[0] ; W_Reg:wreg_inst|w_content[1]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.234      ;
+; -0.699 ; Pipeline_State:pipe_inst|state_mem[0] ; W_Reg:wreg_inst|w_content[2]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.234      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][1]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][2]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][0]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][3]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.663 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.196      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Decoder:dec_inst|write_w         ; c0           ; c0          ; 0.500        ; 0.003      ; 1.188      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Decoder:dec_inst|immediate[0]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.188      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Decoder:dec_inst|immediate[1]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.188      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Decoder:dec_inst|immediate[2]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.188      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][1]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][2]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][0]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][3]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.653 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.186      ;
+; -0.634 ; Pipeline_State:pipe_inst|state_mem[1] ; W_Reg:wreg_inst|w_content[0]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.169      ;
+; -0.634 ; Pipeline_State:pipe_inst|state_mem[1] ; W_Reg:wreg_inst|w_content[1]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.169      ;
+; -0.634 ; Pipeline_State:pipe_inst|state_mem[1] ; W_Reg:wreg_inst|w_content[2]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.169      ;
+; -0.632 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Memory:instr_inst|instruction[1] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.166      ;
+; -0.632 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Memory:instr_inst|instruction[0] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.166      ;
+; -0.632 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Memory:instr_inst|instruction[2] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.166      ;
+; -0.632 ; Pipeline_State:pipe_inst|state_mem[0] ; Instruction_Memory:instr_inst|instruction[7] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.166      ;
+; -0.615 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Decoder:dec_inst|write_w         ; c0           ; c0          ; 0.500        ; 0.003      ; 1.150      ;
+; -0.615 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Decoder:dec_inst|immediate[0]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.150      ;
+; -0.615 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Decoder:dec_inst|immediate[1]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.150      ;
+; -0.615 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Decoder:dec_inst|immediate[2]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.150      ;
+; -0.604 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[2]            ; c0           ; c0          ; 0.500        ; -0.002     ; 1.134      ;
+; -0.604 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[6]            ; c0           ; c0          ; 0.500        ; -0.002     ; 1.134      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][1]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][2]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][0]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][3]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.599 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.131      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][1]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][2]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][0]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][3]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][4]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][5]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][6]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][7]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.589 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|stack_int[0][8]              ; c0           ; c0          ; 0.500        ; 0.000      ; 1.121      ;
+; -0.585 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[2]                  ; c0           ; c0          ; 0.500        ; -0.002     ; 1.115      ;
+; -0.585 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[6]                  ; c0           ; c0          ; 0.500        ; -0.002     ; 1.115      ;
+; -0.585 ; Pipeline_State:pipe_inst|state_mem[2] ; W_Reg:wreg_inst|w_content[0]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.120      ;
+; -0.585 ; Pipeline_State:pipe_inst|state_mem[2] ; W_Reg:wreg_inst|w_content[1]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.120      ;
+; -0.585 ; Pipeline_State:pipe_inst|state_mem[2] ; W_Reg:wreg_inst|w_content[2]                 ; c0           ; c0          ; 0.500        ; 0.003      ; 1.120      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][1]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][2]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][0]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][3]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][4]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][5]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][6]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][7]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.538 ; Pipeline_State:pipe_inst|state_mem[2] ; Stack:stack_int|stack_int[1][8]              ; c0           ; c0          ; 0.500        ; 0.001      ; 1.071      ;
+; -0.533 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|ret_addr[2]                  ; c0           ; c0          ; 0.500        ; -0.002     ; 1.063      ;
+; -0.533 ; Pipeline_State:pipe_inst|state_mem[0] ; Stack:stack_int|ret_addr[6]                  ; c0           ; c0          ; 0.500        ; -0.002     ; 1.063      ;
+; -0.531 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Memory:instr_inst|instruction[1] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.065      ;
+; -0.531 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Memory:instr_inst|instruction[0] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.065      ;
+; -0.531 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Memory:instr_inst|instruction[2] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.065      ;
+; -0.531 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Memory:instr_inst|instruction[7] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.065      ;
+; -0.525 ; Pipeline_State:pipe_inst|state_mem[0] ; Program_Counter:pc_inst|pc_int[2]            ; c0           ; c0          ; 0.500        ; -0.002     ; 1.055      ;
+; -0.525 ; Pipeline_State:pipe_inst|state_mem[0] ; Program_Counter:pc_inst|pc_int[6]            ; c0           ; c0          ; 0.500        ; -0.002     ; 1.055      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[1]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[1]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[0]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[0]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[3]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[3]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[4]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[4]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[5]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[5]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[7]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[7]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Stack:stack_int|ret_addr[8]                  ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.515 ; Pipeline_State:pipe_inst|state_mem[1] ; Program_Counter:pc_inst|pc_int[8]            ; c0           ; c0          ; 0.500        ; -0.001     ; 1.046      ;
+; -0.497 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Decoder:dec_inst|write_w         ; c0           ; c0          ; 0.500        ; 0.003      ; 1.032      ;
+; -0.497 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Decoder:dec_inst|immediate[0]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.032      ;
+; -0.497 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Decoder:dec_inst|immediate[1]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.032      ;
+; -0.497 ; Pipeline_State:pipe_inst|state_mem[1] ; Instruction_Decoder:dec_inst|immediate[2]    ; c0           ; c0          ; 0.500        ; 0.003      ; 1.032      ;
+; -0.482 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Memory:instr_inst|instruction[1] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.016      ;
+; -0.482 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Memory:instr_inst|instruction[0] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.016      ;
+; -0.482 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Memory:instr_inst|instruction[2] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.016      ;
+; -0.482 ; Pipeline_State:pipe_inst|state_mem[2] ; Instruction_Memory:instr_inst|instruction[7] ; c0           ; c0          ; 0.500        ; 0.002      ; 1.016      ;
++--------+---------------------------------------+----------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'c0'                                                                                                                                                         ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                      ; To Node                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Instruction_Decoder:dec_inst|is_jump~reg0      ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.000      ; 0.367      ;
+; 0.244 ; Stack:stack_int|ret_addr[7]                    ; Program_Counter:pc_inst|pc_int[7]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.396      ;
+; 0.251 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.403      ;
+; 0.322 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|immediate[0]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.475      ;
+; 0.324 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.476      ;
+; 0.325 ; Pipeline_State:pipe_inst|state_mem[0]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.477      ;
+; 0.334 ; Stack:stack_int|stack_int[0][7]                ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.485      ;
+; 0.335 ; Instruction_Memory:instr_inst|instruction[1]   ; Instruction_Decoder:dec_inst|immediate[1]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.488      ;
+; 0.363 ; Stack:stack_int|ret_addr[0]                    ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.515      ;
+; 0.366 ; Stack:stack_int|ret_addr[8]                    ; Program_Counter:pc_inst|pc_int[8]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368 ; Stack:stack_int|ret_addr[3]                    ; Program_Counter:pc_inst|pc_int[3]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.520      ;
+; 0.372 ; Pipeline_State:pipe_inst|state_mem[2]          ; Pipeline_State:pipe_inst|state_mem[1]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.524      ;
+; 0.376 ; Stack:stack_int|ret_addr[4]                    ; Program_Counter:pc_inst|pc_int[4]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; Stack:stack_int|stack_int[0][5]                ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.527      ;
+; 0.377 ; Stack:stack_int|ret_addr[1]                    ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; Stack:stack_int|ret_addr[6]                    ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; Stack:stack_int|ret_addr[2]                    ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; Stack:stack_int|ret_addr[5]                    ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[0]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.532      ;
+; 0.382 ; Pipeline_State:pipe_inst|state_mem[1]          ; Pipeline_State:pipe_inst|state_mem[2]          ; c0           ; c0          ; 0.000        ; 0.000      ; 0.534      ;
+; 0.382 ; Stack:stack_int|stack_int[0][4]                ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.533      ;
+; 0.403 ; Instruction_Decoder:dec_inst|immediate[1]      ; W_Reg:wreg_inst|w_content[1]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.555      ;
+; 0.412 ; Stack:stack_int|stack_int[0][1]                ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.563      ;
+; 0.417 ; Instruction_Decoder:dec_inst|immediate[2]      ; W_Reg:wreg_inst|w_content[2]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.569      ;
+; 0.427 ; Stack:stack_int|stack_int[1][6]                ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 0.576      ;
+; 0.433 ; Stack:stack_int|stack_int[1][2]                ; Stack:stack_int|ret_addr[2]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 0.582      ;
+; 0.434 ; Stack:stack_int|stack_int[1][4]                ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.584      ;
+; 0.434 ; Stack:stack_int|stack_int[1][1]                ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.584      ;
+; 0.435 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[1]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.588      ;
+; 0.438 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.593      ;
+; 0.441 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[2]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.594      ;
+; 0.442 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[2]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.597      ;
+; 0.443 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.598      ;
+; 0.443 ; Instruction_Memory:instr_inst|instruction[2]   ; Instruction_Decoder:dec_inst|immediate[2]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.596      ;
+; 0.444 ; Program_Counter:pc_inst|pc_int[0]              ; Instruction_Memory:instr_inst|instruction[7]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.599      ;
+; 0.444 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|immediate[0]      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.597      ;
+; 0.446 ; Stack:stack_int|stack_int[0][0]                ; Stack:stack_int|ret_addr[0]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.597      ;
+; 0.449 ; Stack:stack_int|stack_int[0][3]                ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.600      ;
+; 0.452 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|write_w           ; c0           ; c0          ; 0.000        ; 0.001      ; 0.605      ;
+; 0.460 ; Stack:stack_int|stack_int[1][3]                ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.610      ;
+; 0.464 ; Instruction_Memory:instr_inst|instruction[1]   ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.617      ;
+; 0.473 ; Stack:stack_int|stack_int[0][6]                ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.623      ;
+; 0.478 ; Stack:stack_int|stack_int[1][8]                ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.628      ;
+; 0.479 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|is_jump~reg0      ; c0           ; c0          ; 0.000        ; 0.001      ; 0.632      ;
+; 0.485 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.638      ;
+; 0.490 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.643      ;
+; 0.491 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.644      ;
+; 0.492 ; Instruction_Memory:instr_inst|instruction[7]   ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.001      ; 0.645      ;
+; 0.503 ; Instruction_Decoder:dec_inst|immediate[0]      ; W_Reg:wreg_inst|w_content[0]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.655      ;
+; 0.518 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[2]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.673      ;
+; 0.539 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[0]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.689      ;
+; 0.544 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[3]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.694      ;
+; 0.546 ; Instruction_Memory:instr_inst|instruction[2]   ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.699      ;
+; 0.552 ; Stack:stack_int|stack_int[1][7]                ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.702      ;
+; 0.553 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; c0           ; c0          ; 0.000        ; 0.001      ; 0.706      ;
+; 0.554 ; Stack:stack_int|stack_int[0][8]                ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.001     ; 0.705      ;
+; 0.555 ; Instruction_Decoder:dec_inst|is_jump~reg0      ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; -0.002     ; 0.705      ;
+; 0.556 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; -0.005     ; 0.703      ;
+; 0.556 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; -0.005     ; 0.703      ;
+; 0.557 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.712      ;
+; 0.558 ; Instruction_Memory:instr_inst|instruction[0]   ; Instruction_Decoder:dec_inst|is_ret~reg0       ; c0           ; c0          ; 0.000        ; 0.001      ; 0.711      ;
+; 0.561 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Stack:stack_int|idx[0]                         ; c0           ; c0          ; 0.000        ; -0.002     ; 0.711      ;
+; 0.561 ; Program_Counter:pc_inst|pc_int[1]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.003      ; 0.716      ;
+; 0.562 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[0]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.714      ;
+; 0.562 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[1]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.714      ;
+; 0.562 ; Instruction_Decoder:dec_inst|write_w           ; W_Reg:wreg_inst|w_content[2]                   ; c0           ; c0          ; 0.000        ; 0.000      ; 0.714      ;
+; 0.563 ; Stack:stack_int|stack_int[1][5]                ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.713      ;
+; 0.580 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[6]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 0.729      ;
+; 0.580 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[7]   ; c0           ; c0          ; 0.000        ; 0.004      ; 0.736      ;
+; 0.581 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[2]                    ; c0           ; c0          ; 0.000        ; -0.003     ; 0.730      ;
+; 0.583 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[1]   ; c0           ; c0          ; 0.000        ; 0.004      ; 0.739      ;
+; 0.585 ; Program_Counter:pc_inst|pc_int[2]              ; Instruction_Memory:instr_inst|instruction[0]   ; c0           ; c0          ; 0.000        ; 0.004      ; 0.741      ;
+; 0.587 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.735      ;
+; 0.588 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[3]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.736      ;
+; 0.589 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[8]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.737      ;
+; 0.590 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[4]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.738      ;
+; 0.592 ; Instruction_Decoder:dec_inst|is_ret~reg0       ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.740      ;
+; 0.610 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[5]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.760      ;
+; 0.610 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[1]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.760      ;
+; 0.612 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[7]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.762      ;
+; 0.613 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[4]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.763      ;
+; 0.617 ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; -0.005     ; 0.764      ;
+; 0.617 ; Stack:stack_int|idx[0]                         ; Stack:stack_int|ret_addr[8]                    ; c0           ; c0          ; 0.000        ; -0.002     ; 0.767      ;
+; 0.621 ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ; Program_Counter:pc_inst|pc_int[1]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.769      ;
+; 0.626 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.774      ;
+; 0.626 ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ; Program_Counter:pc_inst|pc_int[5]              ; c0           ; c0          ; 0.000        ; -0.004     ; 0.774      ;
+; 0.644 ; Program_Counter:pc_inst|pc_int[6]              ; Program_Counter:pc_inst|pc_int[6]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.796      ;
+; 0.646 ; Program_Counter:pc_inst|pc_int[2]              ; Program_Counter:pc_inst|pc_int[2]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.798      ;
+; 0.669 ; Program_Counter:pc_inst|pc_int[8]              ; Stack:stack_int|stack_int[0][8]                ; c0           ; c0          ; 0.000        ; 0.001      ; 0.822      ;
+; 0.676 ; Program_Counter:pc_inst|pc_int[8]              ; Stack:stack_int|stack_int[1][8]                ; c0           ; c0          ; 0.000        ; 0.002      ; 0.830      ;
+; 0.694 ; Program_Counter:pc_inst|pc_int[0]              ; Program_Counter:pc_inst|pc_int[0]              ; c0           ; c0          ; 0.000        ; 0.000      ; 0.846      ;
+; 0.705 ; Program_Counter:pc_inst|pc_int[1]              ; Stack:stack_int|stack_int[1][1]                ; c0           ; c0          ; 0.000        ; 0.002      ; 0.859      ;
++-------+------------------------------------------------+------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'c0'                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                         ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; c0    ; Rise       ; c0                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|immediate[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_jump~reg0      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_jump~reg0      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_ret~reg0       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|is_ret~reg0       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Decoder:dec_inst|write_w           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Decoder:dec_inst|write_w           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Instruction_Memory:instr_inst|instruction[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Rise       ; Pipeline_State:pipe_inst|state_mem[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Program_Counter:pc_inst|pc_int[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|idx[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|idx[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|ret_addr[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|ret_addr[8]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][5]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][5]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][6]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][6]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][7]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][7]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[0][8]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[0][8]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; c0    ; Fall       ; Stack:stack_int|stack_int[1][4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; c0    ; Fall       ; Stack:stack_int|stack_int[1][5]                ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 4.099 ; 4.099 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 3.975 ; 3.975 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 3.964 ; 3.964 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 4.099 ; 4.099 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 3.995 ; 3.995 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 3.995 ; 3.995 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 3.981 ; 3.981 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 3.906 ; 3.906 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 4.189 ; 4.189 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 4.024 ; 4.024 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 4.007 ; 4.007 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 4.189 ; 4.189 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 4.179 ; 4.179 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 3.774 ; 3.774 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 3.763 ; 3.763 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 4.129 ; 4.129 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 4.097 ; 4.097 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 4.129 ; 4.129 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 3.865 ; 3.865 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 4.057 ; 4.057 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 4.074 ; 4.074 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 4.074 ; 4.074 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 3.780 ; 3.780 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 3.836 ; 3.836 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 3.833 ; 3.833 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 3.837 ; 3.837 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 3.882 ; 3.882 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 4.170 ; 4.170 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 4.037 ; 4.037 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 3.883 ; 3.883 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 3.874 ; 3.874 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 3.831 ; 3.831 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 4.037 ; 4.037 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 3.881 ; 3.881 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 3.847 ; 3.847 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 3.824 ; 3.824 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 3.884 ; 3.884 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 4.150 ; 4.150 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 3.779 ; 3.779 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 3.887 ; 3.887 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 4.150 ; 4.150 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 3.968 ; 3.968 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 3.975 ; 3.975 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 3.977 ; 3.977 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 4.086 ; 4.086 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 3.759 ; 3.759 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 3.781 ; 3.781 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 3.752 ; 3.752 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 3.889 ; 3.889 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 4.083 ; 4.083 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 4.001 ; 4.001 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 4.072 ; 4.072 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 3.947 ; 3.947 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 4.071 ; 4.071 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 3.856 ; 3.856 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 4.071 ; 4.071 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 3.993 ; 3.993 ; Fall       ; c0              ;
+; write_w          ; c0         ; 4.200 ; 4.200 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 3.964 ; 3.964 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 3.975 ; 3.975 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 3.964 ; 3.964 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 4.099 ; 4.099 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 3.906 ; 3.906 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 3.995 ; 3.995 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 3.981 ; 3.981 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 3.906 ; 3.906 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 4.007 ; 4.007 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 4.024 ; 4.024 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 4.007 ; 4.007 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 4.189 ; 4.189 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 4.179 ; 4.179 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 3.774 ; 3.774 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 3.763 ; 3.763 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 3.865 ; 3.865 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 4.097 ; 4.097 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 4.129 ; 4.129 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 3.865 ; 3.865 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 4.057 ; 4.057 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 3.780 ; 3.780 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 4.074 ; 4.074 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 3.780 ; 3.780 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 3.836 ; 3.836 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 3.833 ; 3.833 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 3.837 ; 3.837 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 3.882 ; 3.882 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 4.170 ; 4.170 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 3.824 ; 3.824 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 3.883 ; 3.883 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 3.874 ; 3.874 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 3.831 ; 3.831 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 4.037 ; 4.037 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 3.881 ; 3.881 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 3.847 ; 3.847 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 3.824 ; 3.824 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 3.884 ; 3.884 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 3.759 ; 3.759 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 3.779 ; 3.779 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 3.887 ; 3.887 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 4.150 ; 4.150 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 3.968 ; 3.968 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 3.975 ; 3.975 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 3.977 ; 3.977 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 4.086 ; 4.086 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 3.759 ; 3.759 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 3.781 ; 3.781 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 3.752 ; 3.752 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 3.752 ; 3.752 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 3.889 ; 3.889 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 4.083 ; 4.083 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 4.001 ; 4.001 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 4.072 ; 4.072 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 3.947 ; 3.947 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 3.856 ; 3.856 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 3.856 ; 3.856 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 4.071 ; 4.071 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 3.993 ; 3.993 ; Fall       ; c0              ;
+; write_w          ; c0         ; 4.200 ; 4.200 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.728   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  c0              ; -2.728   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -117.052 ; 0.0   ; 0.0      ; 0.0     ; -70.063             ;
+;  c0              ; -117.052 ; 0.000 ; N/A      ; N/A     ; -70.063             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 7.791 ; 7.791 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 7.460 ; 7.460 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 7.438 ; 7.438 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 7.791 ; 7.791 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 7.204 ; 7.204 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 7.447 ; 7.447 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 7.214 ; 7.214 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 8.004 ; 8.004 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 7.527 ; 7.527 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 7.499 ; 7.499 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 7.773 ; 7.773 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 8.004 ; 8.004 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 7.994 ; 7.994 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 6.881 ; 6.881 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 7.824 ; 7.824 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 7.741 ; 7.741 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 7.824 ; 7.824 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 7.165 ; 7.165 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 7.701 ; 7.701 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 7.709 ; 7.709 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 7.167 ; 7.167 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 7.156 ; 7.156 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 7.709 ; 7.709 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 7.237 ; 7.237 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 7.181 ; 7.181 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 7.179 ; 7.179 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 7.182 ; 7.182 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 7.173 ; 7.173 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 7.984 ; 7.984 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 7.611 ; 7.611 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 7.234 ; 7.234 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 7.216 ; 7.216 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 7.170 ; 7.170 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 7.611 ; 7.611 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 7.229 ; 7.229 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 7.196 ; 7.196 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 7.163 ; 7.163 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 7.208 ; 7.208 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 7.230 ; 7.230 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 7.829 ; 7.829 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 6.898 ; 6.898 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 7.174 ; 7.174 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 7.829 ; 7.829 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 7.522 ; 7.522 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 7.531 ; 7.531 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 7.533 ; 7.533 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 7.808 ; 7.808 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 6.877 ; 6.877 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 6.902 ; 6.902 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 7.826 ; 7.826 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 6.872 ; 6.872 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 6.888 ; 6.888 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 7.178 ; 7.178 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 7.642 ; 7.642 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 7.478 ; 7.478 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 7.826 ; 7.826 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 7.623 ; 7.623 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 6.892 ; 6.892 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 7.407 ; 7.407 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 7.713 ; 7.713 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 7.141 ; 7.141 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 7.713 ; 7.713 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 7.466 ; 7.466 ; Fall       ; c0              ;
+; write_w          ; c0         ; 8.014 ; 8.014 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++------------------+------------+-------+-------+------------+-----------------+
+; Data Port        ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------+------------+-------+-------+------------+-----------------+
+; state[*]         ; c0         ; 3.964 ; 3.964 ; Rise       ; c0              ;
+;  state[0]        ; c0         ; 3.975 ; 3.975 ; Rise       ; c0              ;
+;  state[1]        ; c0         ; 3.964 ; 3.964 ; Rise       ; c0              ;
+;  state[2]        ; c0         ; 4.099 ; 4.099 ; Rise       ; c0              ;
+; idx_out[*]       ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+;  idx_out[0]      ; c0         ; 3.902 ; 3.902 ; Fall       ; c0              ;
+; immediate[*]     ; c0         ; 3.906 ; 3.906 ; Fall       ; c0              ;
+;  immediate[0]    ; c0         ; 3.995 ; 3.995 ; Fall       ; c0              ;
+;  immediate[1]    ; c0         ; 3.981 ; 3.981 ; Fall       ; c0              ;
+;  immediate[2]    ; c0         ; 3.906 ; 3.906 ; Fall       ; c0              ;
+; instruction[*]   ; c0         ; 4.007 ; 4.007 ; Fall       ; c0              ;
+;  instruction[0]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[1]  ; c0         ; 4.024 ; 4.024 ; Fall       ; c0              ;
+;  instruction[2]  ; c0         ; 4.007 ; 4.007 ; Fall       ; c0              ;
+;  instruction[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  instruction[7]  ; c0         ; 4.189 ; 4.189 ; Fall       ; c0              ;
+;  instruction[10] ; c0         ; 4.179 ; 4.179 ; Fall       ; c0              ;
+; is_jump          ; c0         ; 3.774 ; 3.774 ; Fall       ; c0              ;
+; is_ret           ; c0         ; 3.763 ; 3.763 ; Fall       ; c0              ;
+; jump_addr[*]     ; c0         ; 3.865 ; 3.865 ; Fall       ; c0              ;
+;  jump_addr[0]    ; c0         ; 4.097 ; 4.097 ; Fall       ; c0              ;
+;  jump_addr[1]    ; c0         ; 4.129 ; 4.129 ; Fall       ; c0              ;
+;  jump_addr[2]    ; c0         ; 3.865 ; 3.865 ; Fall       ; c0              ;
+;  jump_addr[5]    ; c0         ; 4.057 ; 4.057 ; Fall       ; c0              ;
+; pc[*]            ; c0         ; 3.780 ; 3.780 ; Fall       ; c0              ;
+;  pc[0]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[1]           ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  pc[2]           ; c0         ; 4.074 ; 4.074 ; Fall       ; c0              ;
+;  pc[3]           ; c0         ; 3.780 ; 3.780 ; Fall       ; c0              ;
+;  pc[4]           ; c0         ; 3.871 ; 3.871 ; Fall       ; c0              ;
+;  pc[5]           ; c0         ; 3.836 ; 3.836 ; Fall       ; c0              ;
+;  pc[6]           ; c0         ; 3.833 ; 3.833 ; Fall       ; c0              ;
+;  pc[7]           ; c0         ; 3.837 ; 3.837 ; Fall       ; c0              ;
+;  pc[8]           ; c0         ; 3.882 ; 3.882 ; Fall       ; c0              ;
+; place_immediate  ; c0         ; 4.170 ; 4.170 ; Fall       ; c0              ;
+; ret_addr[*]      ; c0         ; 3.824 ; 3.824 ; Fall       ; c0              ;
+;  ret_addr[0]     ; c0         ; 3.883 ; 3.883 ; Fall       ; c0              ;
+;  ret_addr[1]     ; c0         ; 3.874 ; 3.874 ; Fall       ; c0              ;
+;  ret_addr[2]     ; c0         ; 3.831 ; 3.831 ; Fall       ; c0              ;
+;  ret_addr[3]     ; c0         ; 4.037 ; 4.037 ; Fall       ; c0              ;
+;  ret_addr[4]     ; c0         ; 3.881 ; 3.881 ; Fall       ; c0              ;
+;  ret_addr[5]     ; c0         ; 3.847 ; 3.847 ; Fall       ; c0              ;
+;  ret_addr[6]     ; c0         ; 3.824 ; 3.824 ; Fall       ; c0              ;
+;  ret_addr[7]     ; c0         ; 3.860 ; 3.860 ; Fall       ; c0              ;
+;  ret_addr[8]     ; c0         ; 3.884 ; 3.884 ; Fall       ; c0              ;
+; stack_lvl_1[*]   ; c0         ; 3.759 ; 3.759 ; Fall       ; c0              ;
+;  stack_lvl_1[0]  ; c0         ; 3.779 ; 3.779 ; Fall       ; c0              ;
+;  stack_lvl_1[1]  ; c0         ; 3.887 ; 3.887 ; Fall       ; c0              ;
+;  stack_lvl_1[2]  ; c0         ; 4.150 ; 4.150 ; Fall       ; c0              ;
+;  stack_lvl_1[3]  ; c0         ; 3.968 ; 3.968 ; Fall       ; c0              ;
+;  stack_lvl_1[4]  ; c0         ; 3.975 ; 3.975 ; Fall       ; c0              ;
+;  stack_lvl_1[5]  ; c0         ; 3.977 ; 3.977 ; Fall       ; c0              ;
+;  stack_lvl_1[6]  ; c0         ; 4.086 ; 4.086 ; Fall       ; c0              ;
+;  stack_lvl_1[7]  ; c0         ; 3.759 ; 3.759 ; Fall       ; c0              ;
+;  stack_lvl_1[8]  ; c0         ; 3.781 ; 3.781 ; Fall       ; c0              ;
+; stack_lvl_2[*]   ; c0         ; 3.752 ; 3.752 ; Fall       ; c0              ;
+;  stack_lvl_2[0]  ; c0         ; 3.752 ; 3.752 ; Fall       ; c0              ;
+;  stack_lvl_2[1]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[2]  ; c0         ; 3.889 ; 3.889 ; Fall       ; c0              ;
+;  stack_lvl_2[3]  ; c0         ; 4.083 ; 4.083 ; Fall       ; c0              ;
+;  stack_lvl_2[4]  ; c0         ; 4.001 ; 4.001 ; Fall       ; c0              ;
+;  stack_lvl_2[5]  ; c0         ; 4.104 ; 4.104 ; Fall       ; c0              ;
+;  stack_lvl_2[6]  ; c0         ; 4.072 ; 4.072 ; Fall       ; c0              ;
+;  stack_lvl_2[7]  ; c0         ; 3.770 ; 3.770 ; Fall       ; c0              ;
+;  stack_lvl_2[8]  ; c0         ; 3.947 ; 3.947 ; Fall       ; c0              ;
+; w_reg_top[*]     ; c0         ; 3.856 ; 3.856 ; Fall       ; c0              ;
+;  w_reg_top[0]    ; c0         ; 3.856 ; 3.856 ; Fall       ; c0              ;
+;  w_reg_top[1]    ; c0         ; 4.071 ; 4.071 ; Fall       ; c0              ;
+;  w_reg_top[2]    ; c0         ; 3.993 ; 3.993 ; Fall       ; c0              ;
+; write_w          ; c0         ; 4.200 ; 4.200 ; Fall       ; c0              ;
++------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; c0         ; c0       ; 9        ; 0        ; 159      ; 299      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; c0         ; c0       ; 9        ; 0        ; 159      ; 299      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 60    ; 60   ;
+; Unconstrained Output Port Paths ; 60    ; 60   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 12 13:10:36 2018
+Info: Command: quartus_sta MDT90P01 -c MDT90P01
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MDT90P01.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name c0 c0
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.728
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.728      -117.052 c0 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 c0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -70.063 c0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.699
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.699       -30.363 c0 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 c0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -57.380 c0 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 462 megabytes
+    Info: Processing ended: Sat May 12 13:10:36 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
