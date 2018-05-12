@@ -85,8 +85,8 @@ architecture Behavioral of Instruction_Decoder is
 				reg_write_en <= '1';
 			/* LDR R, t - Load register */
 			elsif(instruction(10 downto 5) = "101101") then
-				read_w <= '1';
-				reg_write_en <= '1';
+				write_w <= '1';
+				reg_read_en <= '1';
 				reg_addr <= instruction(4 downto 0);
 			/* LDWI I - Load immediate to W */
 			elsif(instruction(10 downto 4) = "1001000") then

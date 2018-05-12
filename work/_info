@@ -3,15 +3,58 @@ K3
 13
 cModel Technology
 dD:\Programme\Altera_Quartus2_1301_WebEd\Altera_ModelSim\modelsim_ase\win32aloem
+Emdt90p01
+Z0 w1526145411
+Z1 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z2 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
+Z3 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 DPx9 cycloneii 20 cycloneii_components 0 22 h@gSJ;Al32oYg[7^PbnAR0
+Z7 dD:\Programme\Altera_Quartus2_1301_WebEd\Projects\MDT90P01
+Z8 8D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho
+Z9 FD:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho
+l0
+L34
+VBlR_:W[1oG2RUSC9OPR6n0
+!s100 185>AnXZJ^Xz3PZ1ng[UW1
+Z10 OV;C;10.1d;51
+32
+!i10b 1
+Z11 !s108 1526145416.389000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho|
+Z13 !s107 D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho|
+Z14 o-work work -2002 -explicit -O0
+Z15 tExplicit 1
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+Z16 DEx4 work 8 mdt90p01 0 22 BlR_:W[1oG2RUSC9OPR6n0
+l319
+L180
+V[Q<F`_ZfY<9_Ie>R5RKY:3
+!s100 hIM2<>CFlU1Sk5<dUfXL>0
+R10
+32
+!i10b 1
+R11
+R12
+R13
+R14
+R15
 vMDT90P01
 IJ;hon`5Gh8;;OnlNXmdMH0
 VDRkX57k`jTREJZPOg]e543
-Z0 dD:\Programme\Altera_Quartus2_1301_WebEd\Projects\MDT90P01
+R7
 w1525608756
 8D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vo
 FD:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vo
 L0 31
-Z1 OV;L;10.1d;51
+Z17 OV;L;10.1d;51
 r1
 31
 o-work work -O0
@@ -23,46 +66,3 @@ n@m@d@t90@p01
 !s107 D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vo|
 !s90 -reportprogress|300|-work|work|D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vo|
 !s101 -O0
-Emdt90p01
-Z2 w1526138838
-Z3 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
-Z4 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
-Z5 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
-Z6 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z7 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z8 DPx9 cycloneii 20 cycloneii_components 0 22 h@gSJ;Al32oYg[7^PbnAR0
-Z9 dD:\Programme\Altera_Quartus2_1301_WebEd\Projects\MDT90P01
-Z10 8D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho
-Z11 FD:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho
-l0
-L34
-VBlR_:W[1oG2RUSC9OPR6n0
-!s100 185>AnXZJ^Xz3PZ1ng[UW1
-Z12 OV;C;10.1d;51
-32
-!i10b 1
-Z13 !s108 1526138843.767000
-Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho|
-Z15 !s107 D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho|
-Z16 o-work work -2002 -explicit -O0
-Z17 tExplicit 1
-Astructure
-R3
-R4
-R5
-R6
-R7
-R8
-Z18 DEx4 work 8 mdt90p01 0 22 BlR_:W[1oG2RUSC9OPR6n0
-l377
-L180
-VP7X[3z7dhmenCVPo0]zlz1
-!s100 Q[`fhia]JYOY?DTl=n6kA3
-R12
-32
-!i10b 1
-R13
-R14
-R15
-R16
-R17

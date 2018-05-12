@@ -114,20 +114,15 @@ state[2] <> state[2]
 
 |MDT90P01|Instruction_Memory:instr_inst
 pc[0] => Mux0.IN5
-pc[0] => Mux1.IN10
-pc[0] => Mux2.IN10
-pc[0] => Mux3.IN5
-pc[0] => Mux4.IN5
-pc[0] => Mux5.IN5
+pc[0] => Mux1.IN5
+pc[0] => Mux2.IN5
+pc[0] => instruction[1]~reg0.DATAIN
+pc[0] => instruction[0]~reg0.DATAIN
 pc[0] => instruction[8]~reg0.DATAIN
 pc[1] => Mux0.IN4
-pc[1] => Mux1.IN9
-pc[1] => Mux2.IN9
-pc[1] => Mux3.IN4
-pc[1] => Mux4.IN4
-pc[2] => Mux1.IN8
-pc[2] => Mux2.IN8
-pc[2] => Mux5.IN4
+pc[1] => Mux1.IN4
+pc[1] => Mux2.IN4
+pc[2] => ~NO_FANOUT~
 pc[3] => ~NO_FANOUT~
 pc[4] => ~NO_FANOUT~
 pc[5] => ~NO_FANOUT~

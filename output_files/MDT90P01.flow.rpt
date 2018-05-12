@@ -1,5 +1,5 @@
 Flow report for MDT90P01
-Sat May 12 17:27:18 2018
+Sat May 12 19:16:51 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat May 12 17:27:18 2018           ;
+; Flow Status                        ; Successful - Sat May 12 19:16:51 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; MDT90P01                                        ;
 ; Top-level Entity Name              ; MDT90P01                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 123 / 18,752 ( < 1 % )                          ;
-;     Total combinational functions  ; 123 / 18,752 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 75 / 18,752 ( < 1 % )                           ;
-; Total registers                    ; 75                                              ;
+; Total logic elements               ; 82 / 18,752 ( < 1 % )                           ;
+;     Total combinational functions  ; 75 / 18,752 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 52 / 18,752 ( < 1 % )                           ;
+; Total registers                    ; 52                                              ;
 ; Total pins                         ; 105 / 315 ( 33 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/12/2018 17:27:09 ;
+; Start date & time ; 05/12/2018 19:16:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MDT90P01            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                                ; Value                                                     ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                          ; 84440835442357.152613882907920                            ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                          ; 84440835442357.152614540221140                            ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST                ; On                                                        ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT                         ; Vhdl                                                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                            ; ModelSim-Altera (VHDL)                                    ; <None>        ; --          ; --             ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 571 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 768 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 485 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 571 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 766 MB              ; 00:00:03                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 489 MB              ; 00:00:01                           ;
 ; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 462 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 434 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:07                           ;
+; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
