@@ -21,6 +21,7 @@ entity RAM_Memory is
 		
 		ram_top: out unsigned(3 downto 0);
 		pc_skip: out std_logic;
+		w_to_ram: in std_logic;
 		
 		state: in unsigned(2 downto 0)
 	);
@@ -40,7 +41,7 @@ architecture Behavioral of RAM_Memory is
 		pc_skip <= '0';
 		reg_read_data <= "0000";
 		
-		if reg_write_en = '1' then
+		if reg_write_en = '1' or w_to_ram = '1' then
 			if bit_set = '1' then
 				reg_array(to_integer(unsigned(reg_addr)))(to_integer(unsigned(bit_pos))) <= '1';
 			elsif bit_clear = '1' then
@@ -48,7 +49,8 @@ architecture Behavioral of RAM_Memory is
 			else
 				reg_array(to_integer(unsigned(reg_addr))) <= reg_write_data;
 			end if;
-		elsif reg_read_en = '1' then
+		end if;
+		if reg_read_en = '1' then
 			if bit_test = '1' then
 				if bit_skip_clear = '1' and reg_array(to_integer(unsigned(reg_addr)))(to_integer(unsigned(bit_pos))) = '0' then
 					pc_skip <= '1';

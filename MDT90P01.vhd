@@ -27,6 +27,7 @@ entity MDT90P01 is
 		
 		ram_top: inout unsigned(3 downto 0);
 		w_reg_top: inout unsigned(3 downto 0);
+		w_to_ram: inout std_logic;
 		
 		is_add: inout std_logic;
 		
@@ -102,6 +103,7 @@ architecture Behavioral of MDT90P01 is
 			immediate => immediate,
 			read_w => read_w,
 			write_w => write_w,
+			w_to_ram => w_to_ram,
 			reg_write_data => reg_write_data,
 			reg_read_data => reg_read_data,
 			w_reg_top => w_reg_top
@@ -121,6 +123,7 @@ architecture Behavioral of MDT90P01 is
 			bit_skip_clear => bit_skip_clear,
 			bit_test => bit_test,
 			pc_skip => pc_skip,
+			w_to_ram => w_to_ram,
 			ram_top => ram_top
 	);
 	

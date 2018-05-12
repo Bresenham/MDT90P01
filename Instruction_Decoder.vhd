@@ -84,7 +84,7 @@ architecture Behavioral of Instruction_Decoder is
 				reg_addr <= instruction(4 downto 0);
 				reg_write_en <= '1';
 			/* LDR R, t - Load register */
-			elsif(instruction(10 downto 5) = "111101") then
+			elsif(instruction(10 downto 5) = "101101") then
 				read_w <= '1';
 				reg_write_en <= '1';
 				reg_addr <= instruction(4 downto 0);
@@ -94,11 +94,16 @@ architecture Behavioral of Instruction_Decoder is
 				place_immediate <= '1';
 				immediate <= instruction(3 downto 0);
 			/* ADDWR R, t - Add W and register */
-			elsif(instruction(10 downto 5) = "101110") then
-				write_w <= '1';
-				reg_read_en <= '1';
+			elsif(instruction(10) = '1' and instruction(8 downto 5) = "1110") then
 				reg_addr <= instruction(4 downto 0);
 				is_add <= '1';
+				reg_read_en <= '1';
+				/* Result is placed in W register */
+				if(instruction(9) = '0') then
+					write_w <= '1';
+				/* Result is placed in RAM */
+				else
+				end if;
 			/* JUMP(CALL) to address */
 			elsif(instruction(10 downto 9) = "00") then
 				is_jump <= '1';

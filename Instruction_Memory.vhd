@@ -18,17 +18,23 @@ end Instruction_Memory;
 architecture Behavioral of Instruction_Memory is
 
 	/*
-	 * BSR 0,0
-	 * BTSC 0,1
-	 * NOP
-	 * LDWI 0xF
+	 * LDWI 0x3
+	 * LDR 0
+	 * LDWI 0x5
+	 * ADDWR 0,1
+	 * LDWI 0x2
+	 * ADDWR 0,0
+	 * => In Reg0 muss 0x8 stehen
+	 * => In W muss 0xA stehen
 	*/
-	type ROM_type is array (0 to 3) of unsigned(10 downto 0);
+	type ROM_type is array (0 to 5) of unsigned(10 downto 0);
 	constant rom_data: ROM_type := (
-		0 => "01100000000",
-		1 => "01010100000",
-		2 => "10000000000",
-		3 => "10010001111"
+		0 => "10010000011",
+		1 => "10110100000",
+		2 => "10010000101",
+		3 => "11111000000",
+		4 => "10010000010",
+		5 => "10111000000"
 	);
   
 	begin

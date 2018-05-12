@@ -18,6 +18,8 @@ entity W_Reg is
 		
 		immediate: in unsigned(3 downto 0);
 		w_reg_top: out unsigned(3 downto 0);
+		w_to_ram: out std_logic;
+		
 		state: in unsigned(2 downto 0)
 	);
 	
@@ -33,6 +35,8 @@ architecture Behavioral of W_Reg is
 	begin
 	
 		if(falling_edge(c0) and state = "100") then
+			w_to_ram <= '0';
+			
 			if(read_w = '1') then
 				reg_write_data <= w_content;
 			elsif(write_w = '1') then
@@ -43,6 +47,9 @@ architecture Behavioral of W_Reg is
 				else
 					w_content <= reg_read_data;
 				end if;
+			elsif(is_add = '1') then
+				reg_write_data <= w_content + reg_read_data;
+				w_to_ram <= '1';
 			end if;
 			
 		end if;
