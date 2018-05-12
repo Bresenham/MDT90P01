@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MDT90P01
-Sat May 12 13:10:30 2018
+Sat May 12 15:37:58 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,16 +45,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 12 13:10:30 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat May 12 15:37:58 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; MDT90P01                                        ;
 ; Top-level Entity Name              ; MDT90P01                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 73                                              ;
-;     Total combinational functions  ; 61                                              ;
-;     Dedicated logic registers      ; 56                                              ;
-; Total registers                    ; 56                                              ;
-; Total pins                         ; 97                                              ;
+; Total logic elements               ; 75                                              ;
+;     Total combinational functions  ; 70                                              ;
+;     Dedicated logic registers      ; 41                                              ;
+; Total registers                    ; 41                                              ;
+; Total pins                         ; 104                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -180,28 +180,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 73    ;
+; Estimated Total logic elements              ; 75    ;
 ;                                             ;       ;
-; Total combinational functions               ; 61    ;
+; Total combinational functions               ; 70    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 9     ;
-;     -- 3 input functions                    ; 28    ;
-;     -- <=2 input functions                  ; 24    ;
+;     -- 4 input functions                    ; 27    ;
+;     -- 3 input functions                    ; 17    ;
+;     -- <=2 input functions                  ; 26    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 45    ;
-;     -- arithmetic mode                      ; 16    ;
+;     -- normal mode                          ; 55    ;
+;     -- arithmetic mode                      ; 15    ;
 ;                                             ;       ;
-; Total registers                             ; 56    ;
-;     -- Dedicated logic registers            ; 56    ;
+; Total registers                             ; 41    ;
+;     -- Dedicated logic registers            ; 41    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 97    ;
+; I/O pins                                    ; 104   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; c0    ;
-; Maximum fan-out                             ; 56    ;
-; Total fan-out                               ; 407   ;
-; Average fan-out                             ; 1.90  ;
+; Maximum fan-out                             ; 41    ;
+; Total fan-out                               ; 371   ;
+; Average fan-out                             ; 1.73  ;
 +---------------------------------------------+-------+
 
 
@@ -210,96 +210,237 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 ; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
-; |MDT90P01                          ; 61 (1)            ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |MDT90P01                               ; work         ;
-;    |Instruction_Decoder:dec_inst|  ; 9 (9)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Instruction_Decoder:dec_inst  ; work         ;
-;    |Instruction_Memory:instr_inst| ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Instruction_Memory:instr_inst ; work         ;
+; |MDT90P01                          ; 70 (1)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 104  ; 0            ; |MDT90P01                               ; work         ;
+;    |Instruction_Decoder:dec_inst|  ; 11 (11)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Instruction_Decoder:dec_inst  ; work         ;
+;    |Instruction_Memory:instr_inst| ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Instruction_Memory:instr_inst ; work         ;
 ;    |Pipeline_State:pipe_inst|      ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Pipeline_State:pipe_inst      ; work         ;
-;    |Program_Counter:pc_inst|       ; 19 (19)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Program_Counter:pc_inst       ; work         ;
-;    |Stack:stack_int|               ; 23 (23)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Stack:stack_int               ; work         ;
-;    |W_Reg:wreg_inst|               ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|W_Reg:wreg_inst               ; work         ;
+;    |Program_Counter:pc_inst|       ; 27 (27)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|Program_Counter:pc_inst       ; work         ;
+;    |RAM_Memory:ram_inst|           ; 22 (22)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|RAM_Memory:ram_inst           ; work         ;
+;    |W_Reg:wreg_inst|               ; 1 (1)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MDT90P01|W_Reg:wreg_inst               ; work         ;
 +------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                ;
-+------------------------------------------------------+------------------------------------------------------------+
-; Register name                                        ; Reason for Removal                                         ;
-+------------------------------------------------------+------------------------------------------------------------+
-; Instruction_Memory:instr_inst|instruction[3,4,6,8,9] ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|is_add                  ; Merged with Instruction_Decoder:dec_inst|reg_read_en       ;
-; Instruction_Memory:instr_inst|instruction[5]         ; Merged with Instruction_Memory:instr_inst|instruction[0]   ;
-; Instruction_Memory:instr_inst|instruction[10]        ; Merged with Instruction_Memory:instr_inst|instruction[7]   ;
-; Instruction_Decoder:dec_inst|read_w                  ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|reg_write_en            ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|reg_read_en             ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|immediate[3]            ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|reg_addr[0..4]          ; Stuck at GND due to stuck port data_in                     ;
-; RAM_Memory:ram_inst|reg_array[4][0]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[4][1]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[4][2]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[4][3]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_read_data[0..3]              ; Stuck at GND due to stuck port clock_enable                ;
-; W_Reg:wreg_inst|reg_write_data[0..3]                 ; Stuck at GND due to stuck port clock_enable                ;
-; RAM_Memory:ram_inst|reg_array[0][0]                  ; Stuck at GND due to stuck port clock_enable                ;
-; RAM_Memory:ram_inst|reg_array[0][1]                  ; Stuck at GND due to stuck port clock_enable                ;
-; RAM_Memory:ram_inst|reg_array[0][2]                  ; Stuck at GND due to stuck port clock_enable                ;
-; RAM_Memory:ram_inst|reg_array[0][3]                  ; Stuck at GND due to stuck port clock_enable                ;
-; W_Reg:wreg_inst|w_content[3]                         ; Stuck at GND due to stuck port data_in                     ;
-; RAM_Memory:ram_inst|reg_array[2][0]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[1][0]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[3][0]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[1][1]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[2][1]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[3][1]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[2][2]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[1][2]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[3][2]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[1][3]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[2][3]                  ; Lost fanout                                                ;
-; RAM_Memory:ram_inst|reg_array[3][3]                  ; Lost fanout                                                ;
-; Instruction_Decoder:dec_inst|jump_addr[3]~reg0       ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|jump_addr[4]~reg0       ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|jump_addr[6]~reg0       ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|jump_addr[8]~reg0       ; Stuck at GND due to stuck port data_in                     ;
-; Instruction_Decoder:dec_inst|jump_addr[5]~reg0       ; Merged with Instruction_Decoder:dec_inst|jump_addr[0]~reg0 ;
-; Instruction_Decoder:dec_inst|place_immediate         ; Merged with Instruction_Decoder:dec_inst|write_w           ;
-; Instruction_Decoder:dec_inst|jump_addr[7]~reg0       ; Stuck at GND due to stuck port data_in                     ;
-; Total Number of Removed Registers = 53               ;                                                            ;
-+------------------------------------------------------+------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++--------------------------------------------------+----------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                       ;
++--------------------------------------------------+----------------------------------------------------------+
+; Instruction_Memory:instr_inst|instruction[4,6]   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Memory:instr_inst|instruction[0,2,3] ; Merged with Instruction_Memory:instr_inst|instruction[1] ;
+; Instruction_Memory:instr_inst|instruction[10]    ; Merged with Instruction_Memory:instr_inst|instruction[9] ;
+; Instruction_Decoder:dec_inst|read_w              ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|reg_addr[4]         ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|is_add              ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|bit_pos[1]          ; Stuck at GND due to stuck port data_in                   ;
+; W_Reg:wreg_inst|reg_write_data[0..3]             ; Stuck at GND due to stuck port clock_enable              ;
+; RAM_Memory:ram_inst|reg_array[22][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[22][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[22][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[22][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[21][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[21][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[21][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[21][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[20][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[20][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[20][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[20][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[23][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[23][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[23][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[23][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[25][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[25][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[25][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[25][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[26][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[26][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[26][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[26][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[24][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[24][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[24][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[24][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[27][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[27][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[27][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[27][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[17][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[17][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[17][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[17][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[18][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[18][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[18][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[18][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[16][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[16][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[16][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[16][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[19][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[19][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[19][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[19][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[28][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[28][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[28][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[28][3]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[29][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[29][2]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[29][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[29][3]             ; Lost fanout                                              ;
+; Instruction_Decoder:dec_inst|is_jump~reg0        ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[0]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[1]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[2]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[3]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[4]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[5]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[6]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[7]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|jump_addr[8]~reg0   ; Stuck at GND due to stuck port data_in                   ;
+; Stack:stack_int|stack_int[0][0]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][1]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][2]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][3]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][4]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][5]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][6]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][7]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[0][8]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][0]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][1]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][2]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][3]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][4]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][5]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][6]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][7]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|stack_int[1][8]                  ; Stuck at GND due to stuck port clock_enable              ;
+; Stack:stack_int|ret_addr[0..8]                   ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[0][3]              ; Merged with RAM_Memory:ram_inst|reg_array[0][2]          ;
+; RAM_Memory:ram_inst|reg_array[6][3]              ; Merged with RAM_Memory:ram_inst|reg_array[6][2]          ;
+; RAM_Memory:ram_inst|reg_array[10][3]             ; Merged with RAM_Memory:ram_inst|reg_array[10][2]         ;
+; RAM_Memory:ram_inst|reg_array[2][3]              ; Merged with RAM_Memory:ram_inst|reg_array[2][2]          ;
+; RAM_Memory:ram_inst|reg_array[14][3]             ; Merged with RAM_Memory:ram_inst|reg_array[14][2]         ;
+; RAM_Memory:ram_inst|reg_array[9][3]              ; Merged with RAM_Memory:ram_inst|reg_array[9][2]          ;
+; RAM_Memory:ram_inst|reg_array[5][3]              ; Merged with RAM_Memory:ram_inst|reg_array[5][2]          ;
+; RAM_Memory:ram_inst|reg_array[1][3]              ; Merged with RAM_Memory:ram_inst|reg_array[1][2]          ;
+; RAM_Memory:ram_inst|reg_array[13][3]             ; Merged with RAM_Memory:ram_inst|reg_array[13][2]         ;
+; RAM_Memory:ram_inst|reg_array[8][3]              ; Merged with RAM_Memory:ram_inst|reg_array[8][2]          ;
+; RAM_Memory:ram_inst|reg_array[4][3]              ; Merged with RAM_Memory:ram_inst|reg_array[4][2]          ;
+; RAM_Memory:ram_inst|reg_array[12][3]             ; Merged with RAM_Memory:ram_inst|reg_array[12][2]         ;
+; RAM_Memory:ram_inst|reg_array[7][3]              ; Merged with RAM_Memory:ram_inst|reg_array[7][2]          ;
+; RAM_Memory:ram_inst|reg_array[11][3]             ; Merged with RAM_Memory:ram_inst|reg_array[11][2]         ;
+; RAM_Memory:ram_inst|reg_array[3][3]              ; Merged with RAM_Memory:ram_inst|reg_array[3][2]          ;
+; RAM_Memory:ram_inst|reg_array[15][3]             ; Merged with RAM_Memory:ram_inst|reg_array[15][2]         ;
+; RAM_Memory:ram_inst|reg_read_data[3]             ; Merged with RAM_Memory:ram_inst|reg_read_data[2]         ;
+; Instruction_Decoder:dec_inst|place_immediate     ; Merged with Instruction_Decoder:dec_inst|write_w         ;
+; Instruction_Decoder:dec_inst|immediate[1..3]     ; Merged with Instruction_Decoder:dec_inst|immediate[0]    ;
+; Instruction_Decoder:dec_inst|reg_addr[1,2]       ; Merged with Instruction_Decoder:dec_inst|reg_addr[0]     ;
+; RAM_Memory:ram_inst|reg_array[0][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[6][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[10][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[2][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[14][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[9][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[5][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[1][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[13][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[8][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[4][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[12][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[7][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[11][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[3][2]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[15][2]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[9][1]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[9][0]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[5][1]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[5][0]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[1][1]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[1][0]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[13][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[13][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_read_data[2]             ; Stuck at GND due to stuck port sload                     ;
+; RAM_Memory:ram_inst|reg_array[6][1]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[6][0]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[10][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[10][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[2][1]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[2][0]              ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[14][1]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[14][0]             ; Lost fanout                                              ;
+; RAM_Memory:ram_inst|reg_array[4][1]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[4][0]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[12][1]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[12][0]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[11][1]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[11][0]             ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[3][1]              ; Stuck at GND due to stuck port data_in                   ;
+; RAM_Memory:ram_inst|reg_array[3][0]              ; Stuck at GND due to stuck port data_in                   ;
+; Stack:stack_int|idx[0]                           ; Stuck at GND due to stuck port data_in                   ;
+; Instruction_Decoder:dec_inst|bit_test            ; Merged with Instruction_Decoder:dec_inst|reg_read_en     ;
+; RAM_Memory:ram_inst|reg_read_data[0,1]           ; Stuck at GND due to stuck port sclear                    ;
+; Total Number of Removed Registers = 175          ;                                                          ;
++--------------------------------------------------+----------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                    ;
-+----------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name                                ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+----------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Instruction_Memory:instr_inst|instruction[3] ; Stuck at GND              ; Instruction_Decoder:dec_inst|read_w, Instruction_Decoder:dec_inst|reg_write_en,     ;
-;                                              ; due to stuck port data_in ; Instruction_Decoder:dec_inst|reg_read_en,                                           ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|immediate[3],                                          ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|reg_addr[0], Instruction_Decoder:dec_inst|reg_addr[1], ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|reg_addr[2], Instruction_Decoder:dec_inst|reg_addr[3], ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|reg_addr[4], RAM_Memory:ram_inst|reg_array[4][0],      ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[4][1], RAM_Memory:ram_inst|reg_array[4][2],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[4][3], RAM_Memory:ram_inst|reg_read_data[0],          ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_read_data[1], RAM_Memory:ram_inst|reg_read_data[2],         ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_read_data[3], W_Reg:wreg_inst|reg_write_data[0],            ;
-;                                              ;                           ; W_Reg:wreg_inst|reg_write_data[1], W_Reg:wreg_inst|reg_write_data[2],               ;
-;                                              ;                           ; W_Reg:wreg_inst|reg_write_data[3], RAM_Memory:ram_inst|reg_array[0][0],             ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[0][1], RAM_Memory:ram_inst|reg_array[0][2],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[0][3], W_Reg:wreg_inst|w_content[3],                  ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[2][0], RAM_Memory:ram_inst|reg_array[1][0],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[3][0], RAM_Memory:ram_inst|reg_array[1][1],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[2][1], RAM_Memory:ram_inst|reg_array[3][1],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[2][2], RAM_Memory:ram_inst|reg_array[1][2],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[3][2], RAM_Memory:ram_inst|reg_array[1][3],           ;
-;                                              ;                           ; RAM_Memory:ram_inst|reg_array[2][3], RAM_Memory:ram_inst|reg_array[3][3],           ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[3]~reg0,                                     ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[4]~reg0,                                     ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[6]~reg0,                                     ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[8]~reg0,                                     ;
-;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[7]~reg0                                      ;
-+----------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++----------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register                                           ;
++----------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Instruction_Memory:instr_inst|instruction[4] ; Stuck at GND              ; Instruction_Decoder:dec_inst|read_w, Instruction_Decoder:dec_inst|reg_addr[4],   ;
+;                                              ; due to stuck port data_in ; Instruction_Decoder:dec_inst|is_add, Instruction_Decoder:dec_inst|bit_pos[1],    ;
+;                                              ;                           ; W_Reg:wreg_inst|reg_write_data[0], W_Reg:wreg_inst|reg_write_data[1],            ;
+;                                              ;                           ; W_Reg:wreg_inst|reg_write_data[2], W_Reg:wreg_inst|reg_write_data[3],            ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|is_jump~reg0,                                       ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[0]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[1]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[2]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[3]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[4]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[5]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[6]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[7]~reg0,                                  ;
+;                                              ;                           ; Instruction_Decoder:dec_inst|jump_addr[8]~reg0, Stack:stack_int|stack_int[0][0], ;
+;                                              ;                           ; Stack:stack_int|stack_int[0][1], Stack:stack_int|stack_int[0][2],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[0][3], Stack:stack_int|stack_int[0][4],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[0][5], Stack:stack_int|stack_int[0][6],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[0][7], Stack:stack_int|stack_int[0][8],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[1][0], Stack:stack_int|stack_int[1][1],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[1][2], Stack:stack_int|stack_int[1][3],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[1][4], Stack:stack_int|stack_int[1][5],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[1][6], Stack:stack_int|stack_int[1][7],                ;
+;                                              ;                           ; Stack:stack_int|stack_int[1][8], Stack:stack_int|ret_addr[0],                    ;
+;                                              ;                           ; Stack:stack_int|ret_addr[1], Stack:stack_int|ret_addr[2],                        ;
+;                                              ;                           ; Stack:stack_int|ret_addr[3], Stack:stack_int|ret_addr[4],                        ;
+;                                              ;                           ; Stack:stack_int|ret_addr[5], Stack:stack_int|ret_addr[6],                        ;
+;                                              ;                           ; Stack:stack_int|ret_addr[7], Stack:stack_int|ret_addr[8],                        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[0][2], RAM_Memory:ram_inst|reg_array[6][2],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[10][2], RAM_Memory:ram_inst|reg_array[2][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[14][2], RAM_Memory:ram_inst|reg_array[9][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[5][2], RAM_Memory:ram_inst|reg_array[1][2],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[13][2], RAM_Memory:ram_inst|reg_array[8][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[4][2], RAM_Memory:ram_inst|reg_array[12][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[7][2], RAM_Memory:ram_inst|reg_array[11][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[3][2], RAM_Memory:ram_inst|reg_array[15][2],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[9][1], RAM_Memory:ram_inst|reg_array[9][0],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[5][1], RAM_Memory:ram_inst|reg_array[5][0],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[1][1], RAM_Memory:ram_inst|reg_array[1][0],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[13][1], RAM_Memory:ram_inst|reg_array[13][0],      ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_read_data[2], RAM_Memory:ram_inst|reg_array[6][1],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[6][0], RAM_Memory:ram_inst|reg_array[10][1],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[10][0], RAM_Memory:ram_inst|reg_array[2][1],       ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[14][1], RAM_Memory:ram_inst|reg_array[14][0],      ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[4][1], RAM_Memory:ram_inst|reg_array[4][0],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[12][1], RAM_Memory:ram_inst|reg_array[12][0],      ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[11][1], RAM_Memory:ram_inst|reg_array[11][0],      ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_array[3][1], RAM_Memory:ram_inst|reg_array[3][0],        ;
+;                                              ;                           ; RAM_Memory:ram_inst|reg_read_data[0], RAM_Memory:ram_inst|reg_read_data[1]       ;
++----------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -307,12 +448,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 56    ;
+; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 47    ;
+; Number of registers using Clock Enable       ; 29    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -322,15 +463,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|read_w            ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |MDT90P01|Program_Counter:pc_inst|pc_int[3]              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MDT90P01|W_Reg:wreg_inst|w_content[3]                   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |MDT90P01|RAM_Memory:ram_inst|reg_read_data[1]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MDT90P01|W_Reg:wreg_inst|w_content[0]                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MDT90P01|Program_Counter:pc_inst|pc_int[7]              ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|place_immediate   ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|reg_addr[3]       ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|reg_addr[0]       ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|immediate[2]      ;
-; 10:1               ; 9 bits    ; 54 LEs        ; 9 LEs                ; 45 LEs                 ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|jump_addr[5]~reg0 ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|write_w           ;
+; 33:1               ; 4 bits    ; 88 LEs        ; 80 LEs               ; 8 LEs                  ; Yes        ; |MDT90P01|RAM_Memory:ram_inst|reg_read_data[3]           ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|immediate[0]      ;
+; 10:1               ; 9 bits    ; 54 LEs        ; 9 LEs                ; 45 LEs                 ; Yes        ; |MDT90P01|Instruction_Decoder:dec_inst|jump_addr[8]~reg0 ;
+; 64:1               ; 2 bits    ; 84 LEs        ; 2 LEs                ; 82 LEs                 ; No         ; |MDT90P01|Instruction_Decoder:dec_inst|reg_addr          ;
+; 256:1              ; 3 bits    ; 510 LEs       ; 3 LEs                ; 507 LEs                ; No         ; |MDT90P01|Instruction_Decoder:dec_inst|reg_addr          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
 
 
@@ -360,7 +501,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat May 12 13:10:28 2018
+    Info: Processing started: Sat May 12 15:37:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MDT90P01 -c MDT90P01
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pll_conf.vhd
@@ -408,11 +549,15 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
     Warning (13035): Inserted always-enabled tri-state buffer between "pc[6]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "pc[7]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "pc[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "pc_skip" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[0]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "instruction[3]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[5]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "instruction[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "instruction[9]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "instruction[10]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "read_w" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "write_w" and its non-tri-state driver.
@@ -484,6 +629,12 @@ Warning (13034): The following nodes have both tri-state and non-tri-state drive
     Warning (13035): Inserted always-enabled tri-state buffer between "stack_lvl_2[7]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "stack_lvl_2[8]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "idx_out[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_set" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_clear" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_pos[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_pos[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_test" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "bit_skip_clear" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "state[0]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "state[1]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "state[2]" and its non-tri-state driver.
@@ -492,11 +643,8 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "write_tmrh" has no driver
     Warning (13040): Bidir "write_cpio" has no driver
 Warning (13032): The following tri-state nodes are fed by constants
-    Warning (13033): The pin "instruction[3]" is fed by GND
     Warning (13033): The pin "instruction[4]" is fed by GND
     Warning (13033): The pin "instruction[6]" is fed by GND
-    Warning (13033): The pin "instruction[8]" is fed by GND
-    Warning (13033): The pin "instruction[9]" is fed by GND
 Info (13060): One or more bidirs are fed by always enabled tri-state buffers
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc[0]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc[1]" is moved to its source
@@ -507,11 +655,15 @@ Info (13060): One or more bidirs are fed by always enabled tri-state buffers
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc[6]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc[7]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "pc_skip" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[0]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[1]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[3]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[5]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[7]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[9]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "instruction[10]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "read_w" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "write_w" is moved to its source
@@ -525,6 +677,8 @@ Info (13060): One or more bidirs are fed by always enabled tri-state buffers
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_addr[0]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_addr[1]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_addr[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_addr[3]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_addr[4]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_read_data[0]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_read_data[1]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "reg_read_data[2]" is moved to its source
@@ -554,15 +708,18 @@ Info (13060): One or more bidirs are fed by always enabled tri-state buffers
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "ret_addr[6]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "ret_addr[7]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "ret_addr[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_set" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_clear" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_pos[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_pos[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_test" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "bit_skip_clear" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "state[0]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "state[1]" is moved to its source
     Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "state[2]" is moved to its source
 Info (13036): One or more bidirs are fed by always-enabled (GND-fed) open-drain buffers
-    Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "instruction[3]" is set to GND
     Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "instruction[4]" is set to GND
     Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "instruction[6]" is set to GND
-    Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "instruction[8]" is set to GND
-    Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "instruction[9]" is set to GND
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "pc[0]~synth"
     Warning (13010): Node "pc[1]~synth"
@@ -573,20 +730,40 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "pc[6]~synth"
     Warning (13010): Node "pc[7]~synth"
     Warning (13010): Node "pc[8]~synth"
+    Warning (13010): Node "pc_skip~synth"
     Warning (13010): Node "instruction[0]~synth"
     Warning (13010): Node "instruction[1]~synth"
     Warning (13010): Node "instruction[2]~synth"
+    Warning (13010): Node "instruction[3]~synth"
     Warning (13010): Node "instruction[5]~synth"
     Warning (13010): Node "instruction[7]~synth"
+    Warning (13010): Node "instruction[8]~synth"
+    Warning (13010): Node "instruction[9]~synth"
     Warning (13010): Node "instruction[10]~synth"
     Warning (13010): Node "write_w~synth"
+    Warning (13010): Node "reg_write_en~synth"
+    Warning (13010): Node "reg_read_en~synth"
     Warning (13010): Node "place_immediate~synth"
     Warning (13010): Node "immediate[0]~synth"
     Warning (13010): Node "immediate[1]~synth"
     Warning (13010): Node "immediate[2]~synth"
+    Warning (13010): Node "immediate[3]~synth"
+    Warning (13010): Node "reg_addr[0]~synth"
+    Warning (13010): Node "reg_addr[1]~synth"
+    Warning (13010): Node "reg_addr[2]~synth"
+    Warning (13010): Node "reg_addr[3]~synth"
+    Warning (13010): Node "reg_read_data[0]~synth"
+    Warning (13010): Node "reg_read_data[1]~synth"
+    Warning (13010): Node "reg_read_data[2]~synth"
+    Warning (13010): Node "reg_read_data[3]~synth"
+    Warning (13010): Node "ram_top[0]~synth"
+    Warning (13010): Node "ram_top[1]~synth"
+    Warning (13010): Node "ram_top[2]~synth"
+    Warning (13010): Node "ram_top[3]~synth"
     Warning (13010): Node "w_reg_top[0]~synth"
     Warning (13010): Node "w_reg_top[1]~synth"
     Warning (13010): Node "w_reg_top[2]~synth"
+    Warning (13010): Node "w_reg_top[3]~synth"
     Warning (13010): Node "is_ret~synth"
     Warning (13010): Node "is_jump~synth"
     Warning (13010): Node "jump_addr[0]~synth"
@@ -626,20 +803,25 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "stack_lvl_2[7]~synth"
     Warning (13010): Node "stack_lvl_2[8]~synth"
     Warning (13010): Node "idx_out[0]~synth"
+    Warning (13010): Node "bit_set~synth"
+    Warning (13010): Node "bit_clear~synth"
+    Warning (13010): Node "bit_pos[0]~synth"
+    Warning (13010): Node "bit_test~synth"
+    Warning (13010): Node "bit_skip_clear~synth"
     Warning (13010): Node "state[0]~synth"
     Warning (13010): Node "state[1]~synth"
     Warning (13010): Node "state[2]~synth"
-Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (17049): 72 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 180 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
-    Info (21060): Implemented 96 bidirectional pins
-    Info (21061): Implemented 83 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 166 warnings
-    Info: Peak virtual memory: 583 megabytes
-    Info: Processing ended: Sat May 12 13:10:30 2018
+    Info (21060): Implemented 103 bidirectional pins
+    Info (21061): Implemented 78 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 198 warnings
+    Info: Peak virtual memory: 571 megabytes
+    Info: Processing ended: Sat May 12 15:37:58 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 

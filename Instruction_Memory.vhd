@@ -18,24 +18,21 @@ end Instruction_Memory;
 architecture Behavioral of Instruction_Memory is
 
 	/*
-	* 0: JUMP 0x2
-	* 1: LDWI 0x2
-	* 2: JUMP 0x4
-	* 3: RETWI 0x3
-	* 4: RETWI 0x1
-	* => In W muss 0x2 stehen
+	 * BSR 0,0
+	 * BTSC 0,1
+	 * NOP
+	 * LDWI 0xF
 	*/
-	type ROM_type is array (0 to 4) of unsigned(10 downto 0);
+	type ROM_type is array (0 to 3) of unsigned(10 downto 0);
 	constant rom_data: ROM_type := (
-		0 => "00000000010",
-		1 => "10010000010",
-		2 => "00000000100",
-		3 => "10010100011",
-		4 => "10010100001"
+		0 => "01100000000",
+		1 => "01010100000",
+		2 => "10000000000",
+		3 => "10010001111"
 	);
   
 	begin
-	process(c0)
+	process(c0, pc)
 	begin
 	
 		if(falling_edge(c0)) then

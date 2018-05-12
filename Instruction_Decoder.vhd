@@ -26,7 +26,13 @@ entity Instruction_Decoder is
 		 
 		 is_ret: inout std_logic;
 		 is_jump: inout std_logic;
-		 jump_addr: inout unsigned(8 downto 0)
+		 jump_addr: inout unsigned(8 downto 0);
+		 
+		 bit_set: out std_logic;
+		 bit_clear: out std_logic;
+		 bit_pos: out unsigned(1 downto 0);
+		 bit_test: out std_logic;
+		 bit_skip_clear: out std_logic
 	);
 
 end Instruction_Decoder;
@@ -51,9 +57,14 @@ architecture Behavioral of Instruction_Decoder is
 			place_immediate <= '0';
 			is_ret <= '0';
 			is_jump <= '0';
+			bit_set <= '0';
+			bit_clear <= '0';
+			bit_test <= '0';
+			bit_skip_clear <= '0';
 			
 			immediate <= "0000";
 			reg_addr <= "00000";
+			bit_pos <= "00";
 		
 			/* TMODEL - Load W to TMRL register */
 			if(instruction = "10000000011") then
@@ -98,6 +109,32 @@ architecture Behavioral of Instruction_Decoder is
 				write_w <= '1';
 				place_immediate <= '1';
 				immediate <= instruction(3 downto 0);
+			/* BCR R, b - Bit clear */
+			elsif(instruction(10 downto 7) = "0100") then
+				reg_write_en <= '1';
+				bit_clear <= '1';
+				bit_pos <= instruction(6 downto 5);
+				reg_addr <= instruction(4 downto 0);
+			/* BSR R, b - Bit set */
+			elsif(instruction(10 downto 7) = "0110") then
+				reg_write_en <= '1';
+				bit_set <= '1';
+				bit_pos <= instruction(6 downto 5);
+				reg_addr <= instruction(4 downto 0);
+			/* BTSC R, b - Bit Test, skip if clear */
+			elsif(instruction(10 downto 7) = "0101") then
+				bit_test <= '1';
+				bit_skip_clear <= '1';
+				reg_read_en <= '1';
+				bit_pos <= instruction(6 downto 5);
+				reg_addr <= instruction(4 downto 0);
+			/* BTSS R, b - Bit Test, skip if set */
+			elsif(instruction(10 downto 7) = "0111") then
+				bit_test <= '1';
+				bit_skip_clear <= '0';
+				reg_read_en <= '1';
+				bit_pos <= instruction(6 downto 5);
+				reg_addr <= instruction(4 downto 0);
 			end if;
 			
 		end if;

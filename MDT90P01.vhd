@@ -8,6 +8,7 @@ entity MDT90P01 is
 		c0: in std_logic;
 		
 		pc: inout unsigned(8 downto 0);
+		pc_skip: inout std_logic;
 		instruction: inout unsigned(10 downto 0);
 		
 		write_tmrl: inout std_logic;
@@ -38,6 +39,12 @@ entity MDT90P01 is
 		stack_lvl_2: inout unsigned(8 downto 0);
 		idx_out: inout unsigned(0 downto 0);
 		
+		bit_set: inout std_logic;
+		bit_clear: inout std_logic;
+		bit_pos: inout unsigned(1 downto 0);
+		bit_test: inout std_logic;
+		bit_skip_clear: inout std_logic;
+		
 		state: inout unsigned(2 downto 0)
 	);
 	
@@ -61,6 +68,7 @@ architecture Behavioral of MDT90P01 is
 			is_ret => is_ret,
 			ret_addr => ret_addr,
 			jump_addr => jump_addr,
+			pc_skip => pc_skip,
 			state => state
 	);
 	
@@ -78,7 +86,12 @@ architecture Behavioral of MDT90P01 is
 			is_ret => is_ret,
 			jump_addr => jump_addr,
 			immediate => immediate,
-			reg_addr => reg_addr
+			reg_addr => reg_addr,
+			bit_set => bit_set,
+			bit_test => bit_test,
+			bit_skip_clear => bit_skip_clear,
+			bit_clear => bit_clear,
+			bit_pos => bit_pos
 	);
 	
 	wreg_inst: entity work.W_Reg port map(
@@ -102,6 +115,12 @@ architecture Behavioral of MDT90P01 is
 			reg_addr => reg_addr,
 			reg_write_data => reg_write_data,
 			reg_read_data => reg_read_data,
+			bit_set => bit_set,
+			bit_clear => bit_clear,
+			bit_pos => bit_pos,
+			bit_skip_clear => bit_skip_clear,
+			bit_test => bit_test,
+			pc_skip => pc_skip,
 			ram_top => ram_top
 	);
 	
