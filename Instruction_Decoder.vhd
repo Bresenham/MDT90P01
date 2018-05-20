@@ -12,6 +12,7 @@ entity Instruction_Decoder is
 		 
 		 is_add: out std_logic;
 		 is_and: out std_logic;
+		 is_decr: out std_logic;
 		 
 		 write_tmrl: out std_logic;
 		 write_tmrh: out std_logic;
@@ -48,6 +49,7 @@ architecture Behavioral of Instruction_Decoder is
 
 			is_add <= '0';
 			is_and <= '0';
+			is_decr <= '0';
 			
 			write_tmrh <= '0';
 			write_tmrl <= '0';
@@ -106,6 +108,17 @@ architecture Behavioral of Instruction_Decoder is
 				/* Result is placed in RAM */
 				else
 				end if;
+			/* DECRSZ R, t - Decrement register, skip if zero */
+			elsif(instruction(10) = '1' and instruction(8 downto 5) = "1111") then
+				reg_addr <= instruction(4 downto 0);
+				is_decr <= '1';
+				reg_read_en <= '1';
+				/* Result is placed in W register */
+				if(instruction(9) = '0') then
+					write_w <= '1';
+				/* Result is placed in RAM */
+				else
+				end if;
 			/* ANDWR R, t - AND W and register */
 			elsif(instruction(10) = '1' and instruction(8 downto 5) = "1001") then
 				reg_addr <= instruction(4 downto 0);
@@ -117,6 +130,12 @@ architecture Behavioral of Instruction_Decoder is
 				/* Result is placed in RAM */
 				else
 				end if;
+			/* ANDWI i - AND W and immediate */
+			elsif(instruction(10 downto 4) = "1000010") then
+				write_w <= '1';
+				is_and <= '1';
+				place_immediate <= '1';
+				immediate <= instruction(3 downto 0);
 			/* JUMP(CALL) to address */
 			elsif(instruction(10 downto 9) = "00") then
 				is_jump <= '1';

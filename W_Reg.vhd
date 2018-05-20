@@ -13,6 +13,7 @@ entity W_Reg is
 		
 		is_add: in std_logic;
 		is_and: in std_logic;
+		is_decr: in std_logic;
 		
 		reg_write_data: out unsigned(3 downto 0);
 		reg_read_data: in unsigned(3 downto 0);
@@ -38,6 +39,7 @@ architecture Behavioral of W_Reg is
 
 	begin
 	process(c0, state, reg_read_data, immediate, read_w, write_w)
+		variable temp : unsigned(3 downto 0) := "0000";
 	begin
 	
 		if(falling_edge(c0) and state = "100") then
@@ -47,12 +49,19 @@ architecture Behavioral of W_Reg is
 			if(read_w = '1') then
 				reg_write_data <= w_content;
 			elsif(write_w = '1') then
-				if(place_immediate = '1') then
-					w_content <= immediate;
-				elsif(is_add = '1') then
+				if(is_add = '1') then
 					w_content <= w_content + reg_read_data;
-				elsif(is_and = '1') then
+				elsif(is_and = '1' and place_immediate = '0') then
 					w_content <= w_content and reg_read_data;
+				elsif(is_and = '1' and place_immediate = '1') then
+					w_content <= w_content and immediate;
+				elsif(is_decr = '1') then
+					w_content <= reg_read_data - 1;
+					if(w_content = 0) then
+						pc_skip <= '1';
+					end if;
+				elsif(place_immediate = '1') then
+					w_content <= immediate;
 				else
 					w_content <= reg_read_data;
 				end if;
@@ -67,6 +76,13 @@ architecture Behavioral of W_Reg is
 				w_to_ram <= '1';
 			elsif(is_and = '1') then
 				reg_write_data <= w_content and reg_read_data;
+				w_to_ram <= '1';
+			elsif(is_decr = '1') then
+				temp := reg_read_data - 1;
+				reg_write_data <= temp;
+				if(temp = 0) then
+					pc_skip <= '1';
+				end if;
 				w_to_ram <= '1';
 			end if;
 			

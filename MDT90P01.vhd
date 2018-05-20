@@ -31,6 +31,7 @@ entity MDT90P01 is
 		
 		is_add: inout std_logic;
 		is_and: inout std_logic;
+		is_decr: inout std_logic;
 		
 		is_ret: inout std_logic;
 		is_jump: inout std_logic;
@@ -87,6 +88,7 @@ architecture Behavioral of MDT90P01 is
 			place_immediate => place_immediate,
 			is_add => is_add,
 			is_and => is_and,
+			is_decr => is_decr,
 			is_jump => is_jump,
 			is_ret => is_ret,
 			jump_addr => jump_addr,
@@ -104,6 +106,7 @@ architecture Behavioral of MDT90P01 is
 			state => state,
 			is_add => is_add,
 			is_and => is_and,
+			is_decr => is_decr,
 			place_immediate => place_immediate,
 			immediate => immediate,
 			read_w => read_w,

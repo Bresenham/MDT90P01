@@ -19,19 +19,19 @@ architecture Behavioral of Instruction_Memory is
 
 	/*
 	main:
-	 JUMP insrt
-	str:
-	 STWR 0
-	insrt:
 	 LDWI 0xF
-	 JUMP str
+	 STWR 0
+	 LDWI 0x0
+	 LDR 0,0
+	 ANDWI 0xA
 	*/
-	type ROM_type is array (0 to 3) of unsigned(10 downto 0);
+	type ROM_type is array (0 to 4) of unsigned(10 downto 0);
 	constant rom_data: ROM_type := (
-		0 => "00000000010",
+		0 => "10010001111",
 		1 => "11110000000",
-		2 => "10010001111",
-		3 => "00000000001"
+		2 => "10010000000",
+		3 => "10110100000",
+		4 => "10000101010"
 	);
   
 	begin
