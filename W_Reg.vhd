@@ -1,4 +1,4 @@
-library IEEE;
+ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;  
 
@@ -12,6 +12,7 @@ entity W_Reg is
 		place_immediate: in std_logic;
 		
 		is_add: in std_logic;
+		is_and: in std_logic;
 		
 		reg_write_data: out unsigned(3 downto 0);
 		reg_read_data: in unsigned(3 downto 0);
@@ -19,6 +20,11 @@ entity W_Reg is
 		immediate: in unsigned(3 downto 0);
 		w_reg_top: out unsigned(3 downto 0);
 		w_to_ram: out std_logic;
+		
+		bit_pos: in unsigned(1 downto 0);
+		bit_skip_clear: in std_logic;
+		bit_test: in std_logic;
+		pc_skip: out std_logic;
 		
 		state: in unsigned(2 downto 0)
 	);
@@ -36,6 +42,7 @@ architecture Behavioral of W_Reg is
 	
 		if(falling_edge(c0) and state = "100") then
 			w_to_ram <= '0';
+			pc_skip <= '0';
 			
 			if(read_w = '1') then
 				reg_write_data <= w_content;
@@ -44,11 +51,22 @@ architecture Behavioral of W_Reg is
 					w_content <= immediate;
 				elsif(is_add = '1') then
 					w_content <= w_content + reg_read_data;
+				elsif(is_and = '1') then
+					w_content <= w_content and reg_read_data;
 				else
 					w_content <= reg_read_data;
 				end if;
+			elsif(bit_test = '1') then
+				if bit_skip_clear = '1' and reg_read_data(to_integer(unsigned(bit_pos))) = '0' then
+					pc_skip <= '1';
+				elsif bit_skip_clear = '0' and reg_read_data(to_integer(unsigned(bit_pos))) = '1' then
+					pc_skip <= '1';
+				end if;
 			elsif(is_add = '1') then
 				reg_write_data <= w_content + reg_read_data;
+				w_to_ram <= '1';
+			elsif(is_and = '1') then
+				reg_write_data <= w_content and reg_read_data;
 				w_to_ram <= '1';
 			end if;
 			

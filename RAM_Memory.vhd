@@ -13,14 +13,16 @@ entity RAM_Memory is
 		reg_write_data: in unsigned(3 downto 0);
 		reg_read_data: out unsigned(3 downto 0);
 		
+		/* STATUS FLAGS */
+		scall: out std_logic;
+		reset_scall: in std_logic;
+		
 		bit_set: in std_logic;
 		bit_clear: in std_logic;
 		bit_pos: in unsigned(1 downto 0);
-		bit_skip_clear: in std_logic;
-		bit_test: in std_logic;
 		
 		ram_top: out unsigned(3 downto 0);
-		pc_skip: out std_logic;
+		
 		w_to_ram: in std_logic;
 		
 		state: in unsigned(2 downto 0)
@@ -30,15 +32,14 @@ end RAM_Memory;
 
 architecture Behavioral of RAM_Memory is
 
-	type reg_type is array (0 to 29) of unsigned (3 downto 0);
+	type reg_type is array (0 to 31) of unsigned (3 downto 0);
 	signal reg_array: reg_type;
 
 	begin
-	process(c0, state, bit_test, bit_skip_clear, bit_set, bit_pos, reg_addr) 
+	process(c0, state, bit_set, bit_pos, reg_addr) 
 	begin
  
 	if(falling_edge(c0) and (state = "011" or state = "101")) then
-		pc_skip <= '0';
 		reg_read_data <= "0000";
 		
 		if reg_write_en = '1' or w_to_ram = '1' then
@@ -51,20 +52,15 @@ architecture Behavioral of RAM_Memory is
 			end if;
 		end if;
 		if reg_read_en = '1' then
-			if bit_test = '1' then
-				if bit_skip_clear = '1' and reg_array(to_integer(unsigned(reg_addr)))(to_integer(unsigned(bit_pos))) = '0' then
-					pc_skip <= '1';
-				elsif bit_skip_clear = '0' and reg_array(to_integer(unsigned(reg_addr)))(to_integer(unsigned(bit_pos))) = '1' then
-					pc_skip <= '1';
-				end if;
-			else
-				reg_read_data <= reg_array(to_integer(unsigned(reg_addr)));
-			end if;
+			reg_read_data <= reg_array(to_integer(unsigned(reg_addr)));
+		end if;
+		if reset_scall = '1' then
+			reg_array(4)(2) <= '0';
 		end if;
 	end if;
 	 
 	end process;
 	
 	ram_top <= reg_array(0);
-	
+	scall <= reg_array(4)(2); 
 end Behavioral;

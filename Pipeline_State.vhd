@@ -28,8 +28,8 @@ architecture Behavioral of Pipeline_State is
 			end if;
 		end if;
 		
-		state <= state_mem;
-		
 	end process;
+	
+	state <= state_mem;
 	
 end Behavioral;

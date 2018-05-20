@@ -30,15 +30,18 @@ entity MDT90P01 is
 		w_to_ram: inout std_logic;
 		
 		is_add: inout std_logic;
+		is_and: inout std_logic;
 		
 		is_ret: inout std_logic;
 		is_jump: inout std_logic;
 		jump_addr: inout unsigned(8 downto 0);
+		scall: inout std_logic;
+		reset_scall: inout std_logic;
 		ret_addr: inout unsigned(8 downto 0);
 		
 		stack_lvl_1: inout unsigned(8 downto 0);
 		stack_lvl_2: inout unsigned(8 downto 0);
-		idx_out: inout unsigned(0 downto 0);
+		idx_out: inout unsigned(1 downto 0);
 		
 		bit_set: inout std_logic;
 		bit_clear: inout std_logic;
@@ -83,6 +86,7 @@ architecture Behavioral of MDT90P01 is
 			reg_write_en => reg_write_en,
 			place_immediate => place_immediate,
 			is_add => is_add,
+			is_and => is_and,
 			is_jump => is_jump,
 			is_ret => is_ret,
 			jump_addr => jump_addr,
@@ -99,6 +103,7 @@ architecture Behavioral of MDT90P01 is
 			c0 => c0,
 			state => state,
 			is_add => is_add,
+			is_and => is_and,
 			place_immediate => place_immediate,
 			immediate => immediate,
 			read_w => read_w,
@@ -106,6 +111,10 @@ architecture Behavioral of MDT90P01 is
 			w_to_ram => w_to_ram,
 			reg_write_data => reg_write_data,
 			reg_read_data => reg_read_data,
+			pc_skip => pc_skip,
+			bit_pos => bit_pos,
+			bit_skip_clear => bit_skip_clear,
+			bit_test => bit_test,
 			w_reg_top => w_reg_top
 	);
 	
@@ -120,10 +129,9 @@ architecture Behavioral of MDT90P01 is
 			bit_set => bit_set,
 			bit_clear => bit_clear,
 			bit_pos => bit_pos,
-			bit_skip_clear => bit_skip_clear,
-			bit_test => bit_test,
-			pc_skip => pc_skip,
 			w_to_ram => w_to_ram,
+			scall => scall,
+			reset_scall => reset_scall,
 			ram_top => ram_top
 	);
 	
@@ -137,6 +145,8 @@ architecture Behavioral of MDT90P01 is
 		state => state,
 		is_ret => is_ret,
 		is_jump => is_jump,
+		scall => scall,
+		reset_scall => reset_scall,
 		pc => pc,
 		ret_addr => ret_addr,
 		stack_lvl_1 => stack_lvl_1,
