@@ -38,6 +38,8 @@ entity MDT90P01 is
 		jump_addr: inout unsigned(8 downto 0);
 		scall: inout std_logic;
 		reset_scall: inout std_logic;
+		c_flag: inout std_logic;
+		z_flag: inout std_logic;
 		ret_addr: inout unsigned(8 downto 0);
 		
 		stack_lvl_1: inout unsigned(8 downto 0);
@@ -107,6 +109,8 @@ architecture Behavioral of MDT90P01 is
 			is_add => is_add,
 			is_and => is_and,
 			is_decr => is_decr,
+			c_flag => c_flag,
+			z_flag => z_flag,
 			place_immediate => place_immediate,
 			immediate => immediate,
 			read_w => read_w,
@@ -135,6 +139,8 @@ architecture Behavioral of MDT90P01 is
 			w_to_ram => w_to_ram,
 			scall => scall,
 			reset_scall => reset_scall,
+			c_flag => c_flag,
+			z_flag => z_flag,
 			ram_top => ram_top
 	);
 	

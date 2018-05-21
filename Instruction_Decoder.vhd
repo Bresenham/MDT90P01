@@ -78,6 +78,8 @@ architecture Behavioral of Instruction_Decoder is
 			elsif(instruction = "10000000101") then
 				write_tmrl <= '1';
 				read_w <= '1';
+			/* NOP - No operation */
+			elsif(instruction = "10000000000") then
 			/* CPIO R - Control I/O port register */
 			elsif(instruction(10 downto 3) = "10000000") then
 				write_cpio <= '1';

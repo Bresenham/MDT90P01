@@ -1,1 +1,13 @@
+D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho {1 {vcom -work work -2002 -explicit D:/Programme/Altera_Quartus2_1301_WebEd/Projects/MDT90P01/simulation/modelsim/MDT90P01.vho
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package VITAL_Timing
+-- Loading package VITAL_Primitives
+-- Loading package cycloneii_atom_pack
+-- Loading package cycloneii_components
+-- Compiling entity MDT90P01
+-- Compiling architecture structure of MDT90P01
 
+} {} {}}

@@ -15,6 +15,9 @@ entity W_Reg is
 		is_and: in std_logic;
 		is_decr: in std_logic;
 		
+		c_flag: out std_logic;
+		z_flag: out std_logic;
+		
 		reg_write_data: out unsigned(3 downto 0);
 		reg_read_data: in unsigned(3 downto 0);
 		
@@ -36,60 +39,91 @@ end W_Reg;
 architecture Behavioral of W_Reg is
 
 	signal w_content: unsigned(3 downto 0) := "0000";
-
+	signal z_int: std_logic;
+	signal c_int: std_logic;
+	
 	begin
 	process(c0, state, reg_read_data, immediate, read_w, write_w)
 		variable temp : unsigned(3 downto 0) := "0000";
+		variable temp_c : unsigned(4 downto 0) := "00000";
 	begin
 	
 		if(falling_edge(c0) and state = "100") then
 			w_to_ram <= '0';
 			pc_skip <= '0';
+			temp := "0000";
+			temp_c := "00000";
 			
 			if(read_w = '1') then
 				reg_write_data <= w_content;
-			elsif(write_w = '1') then
-				if(is_add = '1') then
-					w_content <= w_content + reg_read_data;
-				elsif(is_and = '1' and place_immediate = '0') then
-					w_content <= w_content and reg_read_data;
-				elsif(is_and = '1' and place_immediate = '1') then
-					w_content <= w_content and immediate;
-				elsif(is_decr = '1') then
-					w_content <= reg_read_data - 1;
-					if(w_content = 0) then
-						pc_skip <= '1';
-					end if;
-				elsif(place_immediate = '1') then
-					w_content <= immediate;
+			elsif(is_add = '1') then
+				temp_c := '0' & reg_read_data + w_content;
+				c_int <= temp_c(4);
+				temp := temp_c(3 downto 0);
+				if(temp = 0) then
+					z_int <= '1';
 				else
-					w_content <= reg_read_data;
+					z_int <= '0';
 				end if;
+				if(write_w = '1') then
+					w_content <= temp;
+				else
+					reg_write_data <= temp;
+					w_to_ram <= '1';
+				end if;
+			elsif(is_and = '1' and place_immediate = '0') then
+				temp := w_content and reg_read_data;
+				if(temp = 0) then
+					z_int <= '1';
+				else
+					z_int <= '0';
+				end if;
+				if(write_w = '1') then
+					w_content <= temp;
+				else
+					reg_write_data <= temp;
+					w_to_ram <= '1';
+				end if;
+			elsif(is_and = '1' and place_immediate = '1') then
+				temp := w_content and immediate;
+				if(temp = 0) then
+					z_int <= '1';
+				else
+					z_int <= '0';
+				end if;
+				if(write_w = '1') then
+					w_content <= temp;
+				end if;
+			elsif(is_decr = '1') then
+				temp := reg_read_data - 1;
+				if(temp = 0) then
+					pc_skip <= '1';
+				else
+					pc_skip <= '0';
+				end if;
+				if(write_w = '1') then
+					w_content <= temp;
+				else
+					reg_write_data <= temp;
+					w_to_ram <= '1';
+				end if;
+			elsif(place_immediate = '1') then
+				w_content <= immediate;
 			elsif(bit_test = '1') then
 				if bit_skip_clear = '1' and reg_read_data(to_integer(unsigned(bit_pos))) = '0' then
 					pc_skip <= '1';
 				elsif bit_skip_clear = '0' and reg_read_data(to_integer(unsigned(bit_pos))) = '1' then
 					pc_skip <= '1';
 				end if;
-			elsif(is_add = '1') then
-				reg_write_data <= w_content + reg_read_data;
-				w_to_ram <= '1';
-			elsif(is_and = '1') then
-				reg_write_data <= w_content and reg_read_data;
-				w_to_ram <= '1';
-			elsif(is_decr = '1') then
-				temp := reg_read_data - 1;
-				reg_write_data <= temp;
-				if(temp = 0) then
-					pc_skip <= '1';
-				end if;
-				w_to_ram <= '1';
+			elsif(write_w = '1') then
+				w_content <= reg_read_data;
 			end if;
 			
 		end if;
-	
 	end process;
 	
+	c_flag <= c_int;
+	z_flag <= z_int;
 	w_reg_top <= w_content;
 	
 end Behavioral;

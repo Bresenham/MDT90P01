@@ -17,6 +17,9 @@ entity RAM_Memory is
 		scall: out std_logic;
 		reset_scall: in std_logic;
 		
+		c_flag: in std_logic;
+		z_flag: in std_logic;
+		
 		bit_set: in std_logic;
 		bit_clear: in std_logic;
 		bit_pos: in unsigned(1 downto 0);
@@ -56,6 +59,12 @@ architecture Behavioral of RAM_Memory is
 		end if;
 		if reset_scall = '1' then
 			reg_array(4)(2) <= '0';
+		end if;
+		if(c_flag /= reg_array(3)(1)) then
+			reg_array(3)(1) <= c_flag;
+		end if;
+		if(z_flag /= reg_array(3)(2)) then
+			reg_array(3)(2) <= z_flag;
 		end if;
 	end if;
 	 
